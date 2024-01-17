@@ -1,0 +1,9 @@
+source ~/env.sh
+source ~/aliases.sh
+
+eval "$(oh-my-posh init bash --config "$POSH_THEMES_PATH/tokyonight_storm.omp.json")"
+eval "$(zoxide init --cmd j bash)"
+
+alias ".."="cd .."
+alias "~"="cd ~"
+alias open=explorer
