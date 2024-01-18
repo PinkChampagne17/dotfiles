@@ -3,3 +3,7 @@ source ~/.zshrc.sh
 {{- if eq .chezmoi.os "darwin" }}
 source ~/.zshrc_darwin.sh
 {{- end }}
+
+{{- if ne .chezmoi.os "windows" }}
+eval "$(atuin init zsh)"
+{{- end }}
