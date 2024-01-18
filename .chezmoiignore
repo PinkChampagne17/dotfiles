@@ -1,0 +1,7 @@
+README.md
+
+{{- if eq .chezmoi.os "windows" }}
+.starship
+{{ else }}
+.wslconfig
+{{- end }}
