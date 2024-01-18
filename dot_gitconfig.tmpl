@@ -15,6 +15,10 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[protocol]
+	version = 2
+[rebase]
+	autosquash = true
 
 {{- if eq .chezmoi.os "windows" }}
 [core]
