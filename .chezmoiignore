@@ -5,3 +5,7 @@ README.md
 {{ else }}
 .wslconfig
 {{- end }}
+
+{{- if ne .chezmoi.os "darwin" }}
+Brewfile
+{{- end }}
