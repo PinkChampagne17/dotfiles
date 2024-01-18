@@ -6,4 +6,3 @@ eval "$(zoxide init --cmd j bash)"
 
 alias ".."="cd .."
 alias "~"="cd ~"
-alias open=explorer
