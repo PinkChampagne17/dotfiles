@@ -1,7 +1,4 @@
-source ~/aliases.sh
-source ~/env.sh
-
-export STARSHIP_CONFIG=~/starship/pure.toml
+source ~/mydotfiles/base.sh
 
 # if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
     # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
