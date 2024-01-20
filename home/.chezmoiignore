@@ -1,7 +1,6 @@
 README.md
 
 {{- if eq .chezmoi.os "windows" }}
-.starship
 .zshrc
 .zshrc.sh
 .zshrc_darwin.sh

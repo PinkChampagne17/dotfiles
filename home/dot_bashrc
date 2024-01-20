@@ -1,6 +1,7 @@
 source ~/mydotfiles/base.sh
 
-eval "$(oh-my-posh init bash --config "$POSH_THEMES_PATH/tokyonight_storm.omp.json")"
+# eval "$(oh-my-posh init bash --config "$POSH_THEMES_PATH/tokyonight_storm.omp.json")"
+eval "$(starship init bash)"
 eval "$(zoxide init --cmd j bash)"
 
 alias ".."="cd .."
