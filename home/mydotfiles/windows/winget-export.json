@@ -1,0 +1,37 @@
+[
+    {
+        "id": "9MSSK2ZXXN11",
+        "name": "openSUSE Tumbleweed"
+    },
+    "ajeetdsouza.zoxide",
+    "BurntSushi.ripgrep.MSVC",
+    "CoreyButler.NVMforWindows",
+    "Daum.PotPlayer",
+    "Fork.Fork",
+    "Git.Git",
+    "GyDi.ClashVerge",
+    "junegunn.fzf",
+    "Microsoft.DevHome",
+    "Microsoft.DotNet.DesktopRuntime.7",
+    "Microsoft.WindowsTerminal",
+    "MSYS2.MSYS2",
+    "Nushell.Nushell",
+    "o2sh.onefetch",
+    "OBSProject.OBSStudio",
+    "Oracle.VirtualBox",
+    "Pylogmon.pot",
+    "qBittorrent.qBittorrent",
+    "Rustlang.Rustup",
+    "sharkdp.fd",
+    "SlackTechnologies.Slack",
+    "SomePythonThings.WingetUIStore",
+    "SomePythonThings.WingetUIStore",
+    "Starship.Starship",
+    "Telegram.TelegramDesktop",
+    "twpayne.chezmoi",
+    "Valve.Steam",
+    {
+        "id": "XP89DCGQ3K6VLD",
+        "name": "Microsoft PowerToys"
+    }
+]

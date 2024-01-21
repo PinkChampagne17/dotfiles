@@ -4,6 +4,7 @@ README.md
 .zshrc
 {{ else }}
 .wslconfig
+winget-export.json
 {{- end }}
 
 {{- if eq .chezmoi.os "darwin" }}
