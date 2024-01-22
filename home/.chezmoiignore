@@ -8,6 +8,8 @@ README.md
 .wslconfig
 {{- end }}
 
-{{- if ne .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
+.bashrc
+{{ else }}
 Brewfile
 {{- end }}
