@@ -1,4 +1,4 @@
-export EDITOR="code --wait"
+export EDITOR=code
 export STARSHIP_CONFIG="$HOME/mydotfiles/starship/pure.toml"
 
 # https://nextjs.org/telemetry
