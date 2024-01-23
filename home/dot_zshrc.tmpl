@@ -1,7 +1,7 @@
-source ~/mydotfiles/.zshrc.sh
+source ~/mydotfiles/sh/.zshrc.sh
 
 {{- if eq .chezmoi.os "darwin" }}
-source ~/mydotfiles/.zshrc_darwin.sh
+source ~/mydotfiles/sh/.zshrc_darwin.sh
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}

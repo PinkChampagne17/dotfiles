@@ -1,4 +1,4 @@
-source ~/mydotfiles/base.sh
+source ~/mydotfiles/sh/base.sh
 
 # if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
     # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"

@@ -1,4 +1,4 @@
-source ~/mydotfiles/base.sh
+source ~/mydotfiles/sh/base.sh
 
 # eval "$(oh-my-posh init bash --config "$POSH_THEMES_PATH/tokyonight_storm.omp.json")"
 eval "$(starship init bash)"
