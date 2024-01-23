@@ -1,0 +1,4 @@
+["mydotfiles/nu/nu_scripts"]
+refreshPeriod = "168h"
+type = "git-repo"
+url = "git@github.com:nushell/nu_scripts.git"
