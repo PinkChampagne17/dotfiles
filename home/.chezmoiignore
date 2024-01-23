@@ -4,6 +4,7 @@ README.md
 .zshrc
 {{ else }}
 .wslconfig
+AppData
 winget-export.json
 {{- end }}
 
@@ -11,4 +12,5 @@ winget-export.json
 .bashrc
 {{ else }}
 Brewfile
+Library
 {{- end }}
