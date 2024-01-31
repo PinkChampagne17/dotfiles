@@ -1,3 +1,5 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 $username\
 $hostname\
@@ -6,9 +8,18 @@ $git_branch\
 $git_state\
 $git_status\
 $cmd_duration\
-$line_break\
+$nodejs\
 $python\
+$line_break\
 $character"""
+
+right_format = """
+$shell\
+$time\
+$all\
+"""
+
+add_newline = true
 
 [directory]
 style = "blue"
@@ -46,4 +57,13 @@ format = "[$virtualenv]($style) "
 style = "bright-black"
 
 [nodejs]
-format = 'via [🤖 $version](bold green) '
+format = " via [󰎙 $version]($style) "
+style = "bold green"
+
+[shell]
+disabled = false
+
+[time]
+disabled = false
+style = "purple"
+use_12hr = true
