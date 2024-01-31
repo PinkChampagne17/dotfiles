@@ -7,6 +7,27 @@ source ~/mydotfiles/nu/completions.nu
 source ~/.cache/starship/init.nu
 source ~/.zoxide.nu
 
+def "winget-playbook packages" [] {
+	pwsh -Command "Get-WinGetPackage | ConvertTo-Json" | from json
+}
+
+def "winget-playbook export" [] {
+	winget-playbook packages | where Source != null | select Name Id Source
+}
+
+def "winget-playbook export custom" [] {
+	winget-playbook packages |
+	where Source != null and Id !~ "Afterburner|GPU-Z|Microsoft.(AppInstaller|DotNet.DesktopRuntime.6|Edge|UI|OneDrive|VCLibs|WindowsTerminal)|Nvidia|ParadoxInteractive|VCRedist"
+	| uniq-by Id
+	| each {
+		match $in.Source {
+			"msstore" => [$in.Id, $in.Name],
+			_ => $in.Id,
+		}
+	}
+	| to json
+}
+
 # For more information on defining custom themes, see
 # https://www.nushell.sh/book/coloring_and_theming.html
 # And here is the theme collection

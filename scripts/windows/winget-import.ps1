@@ -37,7 +37,7 @@ ForEach-Object {
 		$_
 	}
 	else {
-		$_.id
+		$_.Id
 	}
 } |
 ForEach-Object {

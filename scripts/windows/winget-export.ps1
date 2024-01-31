@@ -18,53 +18,23 @@ $EXCLUEDE_GLOB = @(
 	"Microsoft.UI.Xaml*"
 )
 
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+# [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-function GetMsStorePackageNameById ([string]$id) {
-	$output = winget search $id | Out-String
-	$name = $output -split "`n" |
-	Where-Object { $_.Length -gt 0 } |
-	Select-Object -Last 1 |
-	ForEach-Object { $_ -split $id } |
-	Select-Object -First 1
-	$name.Trim()
-}
-
-$COMMAND_TO_EXPORT = "winget export -o $EXPORT_FILE --accept-source-agreements"
-Write-Output $COMMAND_TO_EXPORT
-Invoke-Expression $COMMAND_TO_EXPORT
-
-Write-Output "Reading $EXPORT_FILE and processing..."
-
-Get-Content -Path $EXPORT_FILE |
-ConvertFrom-Json |
-ForEach-Object { $_.Sources } |
-ForEach-Object {
-	$source = $_.SourceDetails.name
-	$_.Packages | ForEach-Object {
-		$name = ""
-		if ($source -eq "msstore") {
-			$name = GetMsStorePackageNameById $_.PackageIdentifier
-		}
-		New-Object PSObject -Property @{
-			id     = $_.PackageIdentifier
-			name   = $name
-			source = $source
-		}
-	}
-} |
-Where-Object { $_.id -notin $EXCLUEDE_ID } |
+Get-WinGetPackage |
+Where-Object { $_.Source -ne $null } |
+Select-Object -Property Id, Name, Source |
+Where-Object { $_.Id -notin $EXCLUEDE_ID } |
 Where-Object {
-	$id = $_.id
+	$id = $_.Id
 	$EXCLUEDE_GLOB.Where({ $id -like $_ }).Count -eq 0
 } |
 Sort-Object -Property id |
 ForEach-Object {
-	if ($_.name -eq "") {
-		$_.id
+	if ($_.Name -eq "") {
+		$_.Id
 	}
 	else {
-		$_ | Select-Object -Property id, name
+		$_ | Select-Object -Property Id, Name
 	}
 } |
 ConvertTo-Json |
