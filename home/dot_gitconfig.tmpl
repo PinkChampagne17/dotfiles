@@ -1,22 +1,32 @@
-[core]
-	editor = code --wait
 [user]
 	email = 45930107+PinkChampagne17@users.noreply.github.com
 	name = Pink Champagne
 	signingkey = ~/.ssh/id_ed25519.pub
-[gpg]
-	format = ssh
+[core]
+	editor = code --wait
+	pager = delta
 [commit]
 	gpgsign = true
-[includeIf "gitdir/i:~/workcode/"]
-	path = ~/.gitconfig_work
+	verbose = true
+[diff]
+	algorithm = histogram
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[help]
+	autocorrect = prompt
+[gpg]
+	format = ssh
+[merge]
+	conflictstyle = zdiff3
+[includeIf "gitdir/i:~/workcode/"]
+	path = ~/.gitconfig_work
 [protocol]
 	version = 2
+[pull]
+	rebase = true
 [rebase]
 	autosquash = true
 
