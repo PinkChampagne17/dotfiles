@@ -27,3 +27,9 @@ def ll [pattern: string = "."] {
 	}
 	core-ls -alms $pattern | select $columns
 }
+
+# Full term reset, cls, clear buffer, attributes off,
+# https://github.com/nushell/nushell/issues/11693
+def clear [] {
+	$"(ansi esc)c(ansi clsb)(ansi cls)(ansi reset)(ansi home)"
+}
