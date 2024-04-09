@@ -1,0 +1,11 @@
+version: '3'
+
+includes:
+  nixos:
+    taskfile: ./nixos/taskfile.yml
+    dir: ./nixos
+
+tasks:
+  default:
+    cmds:
+      - chezmoi apply -v

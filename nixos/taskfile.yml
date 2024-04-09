@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  default:
+    platforms: [linux]
+    cmds:
+      - sudo nixos-rebuild switch --flake . --impure
+
+  update:
+    platforms: [linux]
+    cmds:
+      - nix flake update
