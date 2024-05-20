@@ -25,7 +25,7 @@ def ll [pattern: string = "."] {
 		"windows" => $baseColumns,
 		_ => [...$baseColumns mode user group],
 	}
-	core-ls -alms $pattern | select $columns
+	core-ls -alms $pattern | select ...$columns
 }
 
 # Full term reset, cls, clear buffer, attributes off,
