@@ -109,6 +109,26 @@
       "name": "2.4G Host",
       "title": "2.4G Host",
       "shortName": "2.4G"
+    },
+    {
+      "name": "Clear BT pairing",
+      "title": "Clear Bluetooth pairing records",
+      "shortName": "ClrBTPair"
+    },
+    {
+      "name": "Lock Win key",
+      "title": "Lock Windows key",
+      "shortName": "LcWinKey"
+    },
+    {
+      "name": "Reset BL",
+      "title": "Reset backlight",
+      "shortName": "RstBL"
+    },
+    {
+      "name": "Tg single color BL",
+      "title": "Toggle SC backlight",
+      "shortName": "SCBLTg"
     }
   ],
   "matrix": {
