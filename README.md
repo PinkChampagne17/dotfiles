@@ -1,29 +1,24 @@
 # Pink Champagne's dotfiles
 
-[Install chezmoi](https://www.chezmoi.io/install/).
+## Install the dependencies
+
+- [chezmoi](https://www.chezmoi.io/install/)
+- [Task](https://taskfile.dev/installation) (or manually  run the commands from the taskfiles)
 
 Initialize chezmoi with this repo.
 
-```shell
-chezmoi init git@github.com:PinkChampagne17/dotfiles-chezmoi.git
+```
+chezmoi init git@github.com:PinkChampagne17/dotfiles.git
 ```
 
-Create chezmoi configuration file to define variables.
-
-```shell
-touch ~/.config/chezmoi/chezmoi.toml
-$EDITOR ~/.config/chezmoi/chezmoi.toml
+## Create chezmoi configuration file and define variables.
+```
+task gen-config
 ```
 
-```toml
-# ~/.config/chezmoi/chezmoi.toml
-[data]
-    work.email = ""
-    work.name = ""
+## Apply
 ```
-
-Apply it.
-
-```shell
-chezmoi apply -v
+task
+# or
+task default
 ```

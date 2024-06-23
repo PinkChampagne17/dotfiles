@@ -9,3 +9,13 @@ tasks:
   default:
     cmds:
       - chezmoi apply -v
+
+  generate-configuration-files:
+    aliases: [gen-config]
+    cmds:
+      - |
+        {{ if eq OS "windows" }}
+          powershell -File ./scripts/taskfile/gen-config.ps1
+        {{ else }}
+          ./scripts/taskfile/gen-config.sh
+        {{ end }}
