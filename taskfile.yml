@@ -10,6 +10,12 @@ tasks:
     cmds:
       - chezmoi apply -v
 
+  brew-bundle-dump:
+    aliases: [bbd]
+    platforms: [darwin]
+    cmds:
+      - nu ./scripts/nu/brew-bundle-dump.nu
+
   generate-configuration-files:
     aliases: [gen-config]
     cmds:
