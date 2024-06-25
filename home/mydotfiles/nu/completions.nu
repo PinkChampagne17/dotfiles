@@ -1,9 +1,11 @@
 source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/fzf.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/grep.nu
+source ~/mydotfiles/nu/nu_scripts/custom-completions/bat/bat-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/git/git-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/npm/npm-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
+source ~/mydotfiles/nu/nu_scripts/custom-completions/rg/rg-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/rustup/rustup-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/vscode/vscode-completions.nu
 

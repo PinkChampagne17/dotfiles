@@ -13,10 +13,8 @@ def pips [] {
 	pi; pn start;
 }
 
-alias core-ls = ls
-
-def ls [pattern: string = "."] {
-    core-ls -s $pattern | get name | grid
+def l [] {
+	ls . | get name | grid
 }
 
 def ll [pattern: string = "."] {
@@ -25,7 +23,8 @@ def ll [pattern: string = "."] {
 		"windows" => $baseColumns,
 		_ => [...$baseColumns mode user group],
 	}
-	core-ls -alms $pattern | select ...$columns
+
+	ls -alms ($pattern | str replace -r "^~" $env.HOME) | select ...$columns
 }
 
 # Full term reset, cls, clear buffer, attributes off,
