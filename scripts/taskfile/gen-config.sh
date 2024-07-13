@@ -1,9 +1,11 @@
 #!/bin/sh
 
-DESTINATION_PATH="$HOME/.config/chezmoi/chezmoi.toml"
+DESTINATION_DIR="$HOME/.config/chezmoi"
+DESTINATION_PATH="$DESTINATION_DIR/chezmoi.toml"
 
 if [ ! -f "$DESTINATION_PATH" ]; then
-    cp ./templates/chezmoi.toml "$DESTINATION_PATH"
+    mkdir -p "$DESTINATION_DIR" &&
+    cp -r ./templates/chezmoi.toml "$DESTINATION_PATH"
 fi
 
 $EDITOR $DESTINATION_PATH
