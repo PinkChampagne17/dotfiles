@@ -1,16 +1,23 @@
-version: '3'
+version: "3"
 
 tasks:
   default:
     platforms: [linux]
     cmds:
+      - nixfmt .
       - nh os switch . -- --impure
 
   gc:
     platforms: [linux]
     cmds:
-      - nix-collect-garbage -d
-      - nix-store --optimise -v
+      - nh clean all -k 10 -K 14d
+      - nix-store --optimise
+
+  routine:
+    platforms: [linux]
+    deps: [update]
+    cmds:
+      - task: default
 
   update:
     platforms: [linux]

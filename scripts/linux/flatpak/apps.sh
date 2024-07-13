@@ -3,10 +3,15 @@ APP_IDS_FROM_FLATHUB=(
 )
 APP_IDS_FROM_SJTU=(
 	"com.github.tchx84.Flatseal"
+	"com.jetpackduba.Gitnuro"
 	"com.microsoft.Edge"
 	"com.qq.QQ"
+	"com.sublimemerge.App"
+	"com.tencent.WeChat"
+    "com.github.johnfactotum.Foliate"
     "com.mattjakeman.ExtensionManager"
     "io.github.flattool.Warehouse"
+    "org.videolan.VLC"
 )
 APP_IDS=(
 )

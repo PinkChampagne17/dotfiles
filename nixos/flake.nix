@@ -13,63 +13,44 @@
       nixpkgs-unstable,
       ...
     }@inputs:
+    let
+      buildSpecialArgs = system: {
+        pkgs-beta = import nixpkgs-beta {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
+    in
     {
       nixosConfigurations = {
         nixos-5500 = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
-
-          specialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-
+          specialArgs = buildSpecialArgs system;
           modules = [
             /etc/nixos/configuration.nix
             ./common.nix
             ./gui.nix
             ./distrobox.nix
             ./host.nix
-            ./gamming.nix
+            ./gamming.nix # TODO: rename to gaming.nix
           ];
         };
 
-        nixos-5600 = nixpkgs.lib.nixosSystem rec {
+        nixos-5600 = nixpkgs-beta.lib.nixosSystem rec {
           system = "x86_64-linux";
-
-          specialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-
+          specialArgs = buildSpecialArgs system;
           modules = [
-            /etc/nixos/configuration.nix
-            ./common.nix
-            ./gui.nix
-            ./distrobox.nix
-            ./host.nix
-            ./nvidia.nix
-            ./gamming.nix
+            ./hosts/nixos-5600.nix
           ];
         };
 
         nixos-vm-aarch = nixpkgs.lib.nixosSystem rec {
           system = "aarch64-linux";
-
-          specialArgs = {
-            pkgs-beta = import nixpkgs-beta {
-              inherit system;
-              config.allowUnfree = true;
-            };
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-
+          specialArgs = buildSpecialArgs system;
           modules = [
             /etc/nixos/configuration.nix
             ./common.nix

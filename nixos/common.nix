@@ -2,11 +2,12 @@
   lib,
   pkgs,
   pkgs-beta,
-  pkgs-unstable,
   ...
 }:
 
 {
+  boot.tmp.cleanOnBoot = true;
+
   environment.systemPackages =
     with pkgs;
     [
@@ -21,10 +22,13 @@
       fzf
       git
       go-task
+      lazygit
       nixfmt-rfc-style
       ripgrep
       starship
       tldr
+      tokei
+      tree
       wget
     ]
     ++ (with pkgs-beta; [

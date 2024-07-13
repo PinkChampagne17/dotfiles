@@ -1,3 +1,12 @@
 {
-  "cSpell.words": ["chezmoi", "nixos", "taskfile"]
+  "cSpell.words": [
+    "chezmoi",
+    "distrobox",
+    "nixfmt",
+    "nixos",
+    "nixpkgs",
+    "optimise",
+    "pkgs",
+    "taskfile"
+  ]
 }

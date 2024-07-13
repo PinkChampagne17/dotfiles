@@ -8,7 +8,9 @@
       piper
       snapshot
     ]
-    ++ (with pkgs-unstable; [ zed-editor ]);
+    ++ (with pkgs-unstable; [
+      zed-editor
+    ]);
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
