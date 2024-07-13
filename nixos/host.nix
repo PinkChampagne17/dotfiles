@@ -9,9 +9,7 @@
       snapshot
     ]
     ++ (with pkgs-unstable; [
-      nushell
       zed-editor
-      zoxide # For v0.9.5
     ]);
 
   hardware.bluetooth.enable = true;

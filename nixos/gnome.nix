@@ -14,6 +14,12 @@
     (with pkgs; [
       gnome-console
       gnome-tour
+      # epiphany # web browser
+      # # evince # document viewer
+      # geary # email reader
+      # gnome-contacts
+      # gnome-disk-utility
+      # gnome-maps
     ])
     ++ (with pkgs.gnome; [
       epiphany # web browser

@@ -1,26 +1,45 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  pkgs-unstable,
+  self,
+  system,
+  ...
+}:
 
 {
-  environment.systemPackages = with pkgs; [
-    ast-grep
-    bat
-    chezmoi
-    delta
-    devbox
-    dig
-    fastfetch
-    fd
-    fzf
-    git
-    go-task
-    # nushell
-    nixfmt-rfc-style
-    ripgrep
-    starship
-    tldr
-    wget
-    # zoxide
-  ];
+  boot.tmp.cleanOnBoot = true;
+
+  environment.systemPackages =
+    with pkgs;
+    [
+      ast-grep
+      bat
+      chezmoi
+      delta
+      devbox
+      dig
+      fastfetch
+      fd
+      fzf
+      git
+      lazygit
+      nixfmt-rfc-style
+      ripgrep
+      starship
+      tldr
+      tokei
+      tree
+      wget
+    ]
+    ++ (with pkgs-unstable; [
+      go-task
+      nushell
+      zoxide # For v0.9.5
+    ]);
+  # ++ [
+  #   self.inputs.nix-alien.packages.${system}.nix-alien
+  # ];
 
   # Swap
   # zramSwap.enable = true;
@@ -55,7 +74,10 @@
     };
   };
 
-  programs.nh.enable = true;
+  programs = {
+    nh.enable = true;
+    nix-ld.enable = true;
+  };
 
   users.users.pinkchampagne = {
     isNormalUser = true;

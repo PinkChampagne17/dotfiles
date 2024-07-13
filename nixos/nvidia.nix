@@ -2,16 +2,17 @@
 
 {
   # https://nixos.wiki/wiki/Nvidia
-
-  environment.systemPackages = with pkgs; [ nvtopPackages.full ];
-
   hardware = {
-    # graphics.enable = true;
-
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        nvtopPackages.full
+      ];
+    };
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = true;
-      open = true;
+      open = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       powerManagement = {
         enable = false;
@@ -19,11 +20,11 @@
       };
     };
 
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
+    # opengl = {
+    #   enable = true;
+    #   driSupport = true;
+    #   driSupport32Bit = true;
+    # };
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
