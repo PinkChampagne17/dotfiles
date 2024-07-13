@@ -7,6 +7,7 @@
     chezmoi
 	delta
     dig
+	distrobox
     fastfetch
     fd
     fzf
@@ -15,11 +16,15 @@
     nushell
     ripgrep
     starship
+	tldr
     wget
     zoxide
   ];
 
   programs.neovim.enable = true;
+
+  virtualisation.docker.enable = true;
+  users.users.pinkchampagne.extraGroups = [ "docker" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

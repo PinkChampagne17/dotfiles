@@ -6,6 +6,16 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
+      nixos-5500 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          /etc/nixos/configuration.nix
+          ./common.nix
+          ./gui.nix
+		  ./bluetooth.nix
+        ];
+      };
+
       nixos-vm-aarch = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         # specialArgs = { inherit inputs; };
@@ -26,14 +36,6 @@
           ./gui.nix
         #   ./hyprland.nix
         #   ./hyprland-32.nix
-        ];
-      };
-
-      nixos-wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          /etc/nixos/configuration.nix
-          ./common.nix
         ];
       };
     };

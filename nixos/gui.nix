@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Enable the X11 windowing system.
@@ -15,11 +15,6 @@
     fcitx5.waylandFrontend = true; # `true` for KDE
   };
 
-  # Flatpak
-  services.flatpak.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # For KDE
-  xdg.portal.config.common.default = "gtk"; # For KDE
-
   fonts.packages = with pkgs; [
     cascadia-code
     noto-fonts-emoji
@@ -34,6 +29,22 @@
   # environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [
+    boxbuddy
+    clash-verge-rev
+	google-chrome
+    mission-center
+    ptyxis
     vscode
+    zed-editor
   ];
+
+  # Flatpak
+  services.flatpak.enable = true;
+  xdg.portal.config.common.default = "gtk"; # For KDE
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # For KDE
+
+  services.ratbagd.enable = true;
+
+#   https://nixos.wiki/wiki/NTFS
+#   boot.supportedFilesystems = [ "ntfs" ];
 }
