@@ -6,6 +6,12 @@ tasks:
     cmds:
       - sudo nixos-rebuild switch --flake . --impure
 
+  gc:
+    platforms: [linux]
+    cmds:
+      - nix-collect-garbage -d
+      - nix-store --optimise -v
+
   update:
     platforms: [linux]
     cmds:

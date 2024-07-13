@@ -1,28 +1,34 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     ast-grep
-	bat
+    bat
     chezmoi
-	delta
+    delta
     dig
     fastfetch
     fd
     fzf
     git
-	go-task
+    go-task
     nushell
     ripgrep
     starship
+    tldr
     wget
     zoxide
   ];
 
-  programs.neovim.enable = true;
+  # Swap
+  # zramSwap.enable = true;
+  # swapDevices = lib.mkForce [];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  time.timeZone = "Asia/Shanghai";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   nix = {
     gc = {
@@ -31,9 +37,25 @@
       options = "--delete-older-than 1w";
     };
 
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [
+        "https://mirrors.ustc.edu.cn/nix-channels/store"
+        "https://mirror.sjtu.edu.cn/nix-channels/store"
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      ];
+    };
+  };
 
-    # https://mirrors.tuna.tsinghua.edu.cn/help/nix-channels/
-    settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+  #   nix.optimise.automatic
+  #   nix.settings.auto-optimise-store
+
+  users.users.pinkchampagne = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [ ];
   };
 }
