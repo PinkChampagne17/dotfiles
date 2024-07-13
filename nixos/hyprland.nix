@@ -14,9 +14,7 @@ in
     package = pkgs-unstable.mesa.drivers;
   };
 
-  environment.systemPackages = with pkgs; [
-    kitty
-  ];
+  environment.systemPackages = with pkgs; [ kitty ];
 
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];
