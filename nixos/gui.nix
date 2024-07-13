@@ -4,48 +4,57 @@
   imports = [
     ./gnome.nix
   ];
-  #   services.displayManager.sddm.wayland.enable = true;
-  #   services.displayManager.sddm.enable = true;
-  #   services.desktopManager.plasma6.enable = true;
 
   i18n.inputMethod = {
+    # enable = true;
+    # type = "fcitx5";
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
-    fcitx5.waylandFrontend = true; # `true` for KDE
+    fcitx5.waylandFrontend = true;
   };
 
-  fonts.packages = with pkgs; [
-    cascadia-code
-    noto-fonts-emoji
-    source-han-sans
-    source-han-mono
-    source-han-serif
-  ];
+  fonts = {
+    fontconfig = {
+      defaultFonts = {
+        serif = [
+          "Source Han Serif SC"
+          "Source Han Serif"
+        ];
+        sansSerif = [
+          "Source Han Sans SC"
+          "Source Han Sans"
+        ];
+        monospace = [
+          "Source Han Mono SC"
+          "Source Han Mono"
+        ];
+      };
+    };
+    packages = with pkgs; [
+      cascadia-code
+      noto-fonts-color-emoji
+      source-han-sans
+      source-han-mono
+      source-han-serif
+    ];
+  };
 
   # Fcitx not work
   # environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [
     baobab
-    devbox
     firefox
-    # google-chrome
     kdePackages.partitionmanager
     mission-center
-    # microsoft-edge
     papirus-icon-theme
     ptyxis
     resources
-    # telegram-desktop
+    telegram-desktop
     vscode
   ];
 
   # Flatpak
   services.flatpak.enable = true;
-
-  #   xdg.portal.config.common.default = "gtk";
-  #   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
-  #   https://nixos.wiki/wiki/NTFS
-  #   boot.supportedFilesystems = [ "ntfs" ];
+  fonts.fontDir.enable = true;
 }

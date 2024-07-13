@@ -1,20 +1,30 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    goverlay
-    mangohud
-  ];
+  environment = {
+    sessionVariables = {
+      # MANGOHUD = "1";
+      # GDK_SCALE = "2"; # https://wiki.archlinux.org/title/HiDPI#Steam
+    };
+    systemPackages = with pkgs; [
+      goverlay
+      mangohud
+    ];
+  };
 
   # https://wiki.nixos.org/wiki/Steam
   # https://wiki.nixos.org/wiki/GameMode
   programs = {
     gamemode.enable = true;
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
     steam = {
       enable = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
-      # protontricks = true;
+      protontricks.enable = true;
       remotePlay.openFirewall = true;
     };
   };

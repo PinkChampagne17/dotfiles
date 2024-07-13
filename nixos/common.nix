@@ -1,21 +1,29 @@
 { lib, pkgs, ... }:
 
 {
+  boot.tmp.cleanOnBoot = true;
+
   environment.systemPackages = with pkgs; [
     ast-grep
     bat
     chezmoi
     delta
+    devbox
     dig
     fastfetch
     fd
     fzf
     git
     go-task
+    lazygit
+    nh
+    nixfmt-rfc-style
     nushell
     ripgrep
     starship
     tldr
+    tokei
+    tree
     wget
     zoxide
   ];
@@ -31,12 +39,12 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   nix = {
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 1w";
-    };
-
+    # gc = {
+    #   automatic = true;
+    #   options = "--delete-older-than 1w";
+    # };
+    optimise.automatic = true;
+    #   nix.settings.auto-optimise-store
     settings = {
       experimental-features = [
         "nix-command"
@@ -46,12 +54,16 @@
         "https://mirrors.ustc.edu.cn/nix-channels/store"
         "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        "https://cache.nixos.org"
+        "https://nix-community.cachix.org" # https://nix-community.org/cache/
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
     };
   };
 
-  #   nix.optimise.automatic
-  #   nix.settings.auto-optimise-store
+  programs.nh.enable = true;
 
   users.users.pinkchampagne = {
     isNormalUser = true;

@@ -2,12 +2,12 @@ APP_IDS_FROM_FLATHUB=(
 	"org.telegram.desktop"
 )
 APP_IDS_FROM_SJTU=(
+	"com.github.tchx84.Flatseal"
 	"com.microsoft.Edge"
 	"com.qq.QQ"
+    "com.mattjakeman.ExtensionManager"
 )
 APP_IDS=(
-    "com.github.tchx84.Flatseal"
-    "com.mattjakeman.ExtensionManager"
 )
 
 for id in "${APP_IDS_FROM_FLATHUB[@]}"

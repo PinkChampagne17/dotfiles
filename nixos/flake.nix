@@ -25,7 +25,7 @@
           ];
         };
 
-        nixos-5600 = nixpkgs.lib.nixosSystem rec {
+        nixos-5600 = nixpkgs-unstable.lib.nixosSystem rec {
           system = "x86_64-linux";
 
           specialArgs = {
@@ -39,7 +39,7 @@
             /etc/nixos/configuration.nix
             ./common.nix
             ./gui.nix
-            ./distrobox.nix
+            # ./distrobox.nix
             ./host.nix
             ./nvidia.nix
             ./gamming.nix

@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages =
@@ -6,7 +11,7 @@
     [
       distrobox
     ]
-    ++ lib.optional services.xserver.enable pkgs.boxbuddy;
+    ++ lib.optional config.services.xserver.enable pkgs.boxbuddy;
 
   # Docker
   virtualisation.docker.enable = true;
