@@ -1,6 +1,9 @@
-version: '3'
+version: "3"
 
 includes:
+  configs:
+    taskfile: ./configs/taskfile.yml
+    dir: ./configs
   nixos:
     taskfile: ./nixos/taskfile.yml
     dir: ./nixos
@@ -10,18 +13,20 @@ tasks:
     cmds:
       - chezmoi apply -v
 
-  brew-bundle-dump:
-    aliases: [bbd]
-    platforms: [darwin]
+  clean:
     cmds:
-      - nu ./scripts/nu/brew-bundle-dump.nu
+      - corepack cache clean
 
-  generate-configuration-files:
-    aliases: [gen-config]
+  init:
+    prompt: This is a dangerous command... Do you want to continue?
+    env:
+      CHEZMOI_CONFIG_PATH: .config/chezmoi/chezmoi.toml
     cmds:
-      - |
-        {{ if eq OS "windows" }}
-          powershell -File ./scripts/taskfile/gen-config.ps1
-        {{ else }}
-          ./scripts/taskfile/gen-config.sh
-        {{ end }}
+      - chezmoi init
+
+      # TODO: For Windows
+      - platform: [darwin, linux]
+        cmd: nano $HOME/$CHEZMOI_CONFIG_PATH
+
+      - task: configs:bbi
+      - task: default

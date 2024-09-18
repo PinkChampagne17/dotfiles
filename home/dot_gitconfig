@@ -4,12 +4,16 @@
 	signingkey = ~/.ssh/id_ed25519.pub
 [core]
 	editor = code --wait
+	ignorecase = false
 	pager = delta
 [commit]
 	gpgsign = true
 	verbose = true
 [diff]
 	algorithm = histogram
+[diff "lockb"]
+	textconv = bun
+	binary = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -21,6 +25,8 @@
 	format = ssh
 [merge]
 	conflictstyle = zdiff3
+[include]
+	path = ~/.gitconfig_dynamic
 [includeIf "gitdir/i:~/workcode/"]
 	path = ~/.gitconfig_work
 [protocol]
@@ -29,12 +35,3 @@
 	rebase = true
 [rebase]
 	autosquash = true
-
-{{- if eq .chezmoi.os "windows" }}
-[core]
-	symlinks = true
-[http]
-	proxy = http://127.0.0.1:7890
-[https]
-	proxy = https://127.0.0.1:7890
-{{- end }}

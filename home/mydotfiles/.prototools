@@ -1,0 +1,12 @@
+deno = "2.1.1"
+node = "23.3.0"
+npm = "10.8.2"
+pnpm = "9.14.2"
+yarn = "4.5.1"
+
+[tools.node]
+bundled-npm = true
+
+[settings]
+auto-install = true
+telemetry = false

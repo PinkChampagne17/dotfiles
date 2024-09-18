@@ -1,5 +1,3 @@
-README.md
-
 {{- if eq .chezmoi.os "windows" }}
 .zshrc
 {{ else }}
@@ -13,4 +11,8 @@ winget-export.json
 {{ else }}
 Brewfile
 Library
+{{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+.config/nushell
 {{- end }}

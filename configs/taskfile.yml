@@ -1,0 +1,14 @@
+version: "3"
+
+tasks:
+  brew-bundle-dump:
+    aliases: [bbd]
+    platforms: [darwin]
+    cmds:
+      - nu ../scripts/nu/brew-bundle-dump.nu
+
+  brew-bundle-install:
+    aliases: [bbi]
+    platforms: [darwin]
+    cmds:
+      - brew bundle install

@@ -1,0 +1,12 @@
+[data]
+    work.email = ""
+    work.name = ""
+
+{{- if ne .chezmoi.os "windows" }}
+[merge]
+    command = "bash"
+    args = [
+        "-c",
+        "cp {{`{{ .Target }}`}} {{`{{ .Target }}`}}.base && code --new-window --wait --merge {{`{{ .Destination }}`}} {{`{{ .Target }}`}} {{`{{ .Target }}`}}.base {{`{{ .Source }}`}}",
+    ]
+{{- end }}

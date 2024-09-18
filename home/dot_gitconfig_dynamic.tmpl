@@ -1,0 +1,8 @@
+{{- if eq .chezmoi.os "windows" }}
+[core]
+	symlinks = true
+[http]
+	proxy = http://127.0.0.1:7897
+[https]
+	proxy = https://127.0.0.1:7897
+{{- end }}

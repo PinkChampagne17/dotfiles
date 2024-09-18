@@ -4,7 +4,13 @@ tasks:
   default:
     platforms: [linux]
     cmds:
-      - sudo nixos-rebuild switch --flake . --impure
+      - nh os switch . -- --impure
+
+  gc:
+    platforms: [linux]
+    cmds:
+      - nix-collect-garbage -d
+      - nix-store --optimise -v
 
   update:
     platforms: [linux]

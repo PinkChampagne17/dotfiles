@@ -2,6 +2,7 @@ source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/f
 source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/grep.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/bat/bat-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
+source ~/mydotfiles/nu/nu_scripts/custom-completions/docker/docker-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/git/git-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/npm/npm-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
@@ -17,6 +18,8 @@ if ($nu.os-info.name == "windows") {
 	if ($nu.os-info.name == "linux") {
 		source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/flatpak.nu
 	}
-	source ~/mydotfiles/nu/nu_scripts/custom-completions/nix/nix-completions.nu
 	source ~/mydotfiles/nu/nu_scripts/custom-completions/less/less-completions.nu
+	source ~/mydotfiles/nu/nu_scripts/custom-completions/nano/nano-completions.nu
+	source ~/mydotfiles/nu/nu_scripts/custom-completions/nix/nix-completions.nu
+	source ~/mydotfiles/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 }
