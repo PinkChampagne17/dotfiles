@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 includes:
   nixos:
@@ -9,6 +9,10 @@ tasks:
   default:
     cmds:
       - chezmoi apply -v
+
+  clean:
+    cmds:
+      - corepack cache clean
 
   brew-bundle-dump:
     aliases: [bbd]
