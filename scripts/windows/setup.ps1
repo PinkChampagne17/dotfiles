@@ -1,6 +1,4 @@
-Start-Process "https://www.telerik.com/fiddler/add-ons#:~:text=Windows%208%20AppContainer%20Loopback%20Utility"
-
-$proxy = "127.0.0.1:7890"
+$proxy = "127.0.0.1:7897"
 
 # Install scoop
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
