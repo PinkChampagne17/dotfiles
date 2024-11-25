@@ -1,50 +1,30 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
-    nixpkgs-beta.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      nixpkgs-beta,
-      nixpkgs-unstable,
-      ...
-    }@inputs:
+    { nixpkgs, nixpkgs-unstable, ... }@inputs:
+    let
+      buildSpecialArgs = system: {
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
+    in
     {
       nixosConfigurations = {
         nixos-5500 = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
-
-          specialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-
-          modules = [
-            /etc/nixos/configuration.nix
-            ./common.nix
-            ./gui.nix
-            ./distrobox.nix
-            ./host.nix
-            ./gamming.nix
-          ];
+          specialArgs = buildSpecialArgs system;
+          modules = [ ./nixos-5500.nix ];
         };
 
         nixos-5600 = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
-
-          specialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-
+          specialArgs = buildSpecialArgs system;
           modules = [
             /etc/nixos/configuration.nix
             ./common.nix
@@ -52,24 +32,13 @@
             ./distrobox.nix
             ./host.nix
             ./nvidia.nix
-            ./gamming.nix
+            ./gaming.nix
           ];
         };
 
         nixos-vm-aarch = nixpkgs.lib.nixosSystem rec {
           system = "aarch64-linux";
-
-          specialArgs = {
-            pkgs-beta = import nixpkgs-beta {
-              inherit system;
-              config.allowUnfree = true;
-            };
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-
+          specialArgs = buildSpecialArgs system;
           modules = [
             /etc/nixos/configuration.nix
             ./common.nix
