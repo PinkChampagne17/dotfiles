@@ -2,9 +2,6 @@
 
 {
   # https://nixos.wiki/wiki/Nvidia
-
-  environment.systemPackages = with pkgs; [ nvtopPackages.full ];
-
   hardware = {
     # graphics.enable = true;
 
