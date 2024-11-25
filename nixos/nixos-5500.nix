@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     /etc/nixos/configuration.nix
@@ -7,6 +7,10 @@
     ./distrobox.nix
     ./host.nix
     ./gaming.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    nvtopPackages.amd
   ];
 
   boot.loader = {

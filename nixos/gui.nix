@@ -46,7 +46,6 @@
     firefox
     kdePackages.partitionmanager
     nixd
-    nvtopPackages.full
     papirus-icon-theme
     ptyxis
     resources
