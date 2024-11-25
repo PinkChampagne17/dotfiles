@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.os "windows" }}
+{{- if ne .chezmoi.os "darwin" }}
 [core]
 	symlinks = true
 [http]

@@ -1,36 +1,35 @@
-{
-  lib,
-  pkgs,
-  pkgs-beta,
-  pkgs-unstable,
-  ...
-}:
+{ lib, pkgs, ... }:
 
 {
-  environment.systemPackages =
-    with pkgs;
-    [
-      ast-grep
-      bat
-      chezmoi
-      delta
-      devbox
-      dig
-      fastfetch
-      fd
-      fzf
-      git
-      go-task
-      nixfmt-rfc-style
-      ripgrep
-      starship
-      tldr
-      wget
-    ]
-    ++ (with pkgs-beta; [
-      nushell # For v0.94.0
-      zoxide # For v0.9.5
-    ]);
+  boot.tmp.cleanOnBoot = true;
+
+  environment.systemPackages = with pkgs; [
+    ast-grep
+    bat
+    chezmoi
+    delta
+    devbox
+    dig
+    fastfetch
+    fd
+    fzf
+    git
+    go-task
+    lazygit
+    nixfmt-rfc-style
+    nushell
+    ripgrep
+    starship
+    tldr
+    tokei
+    tree
+    wget
+    zoxide
+  ];
+
+  networking.hosts = {
+    "127.0.0.1" = [ "tpstelemetry.tencent.com" ];
+  };
 
   # Swap
   # zramSwap.enable = true;

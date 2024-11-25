@@ -1,16 +1,30 @@
-version: '3'
+version: "3"
 
 tasks:
   default:
     platforms: [linux]
+    sources:
+      - /etc/nixos/*.nix
+      - ./**/*.nix
+      - ./flake.lock
     cmds:
+      - sudo nixfmt /etc/nixos
+      - nixfmt .
       - nh os switch . -- --impure
 
   gc:
     platforms: [linux]
     cmds:
-      - nix-collect-garbage -d
-      - nix-store --optimise -v
+      - nh clean all -k 10 -K 14d
+      - nix-store --optimise
+
+  routine:
+    platforms: [linux]
+    cmds:
+      - sudo -v
+      - task --parallel gc update
+      - task: default
+      - flatpak update -y
 
   update:
     platforms: [linux]

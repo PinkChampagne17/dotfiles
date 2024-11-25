@@ -1,3 +1,23 @@
 {
-  "cSpell.words": ["chezmoi", "nixos", "taskfile"]
+  "cSpell.words": [
+    "aarch",
+    "cachix",
+    "chezmoi",
+    "devbox",
+    "distrobox",
+    "fastfetch",
+    "lazygit",
+    "nixfmt",
+    "nixos",
+    "nixpkgs",
+    "nushell",
+    "optimise",
+    "pinkchampagne",
+    "pkgs",
+    "substituters",
+    "taskfile",
+    "tokei",
+    "zoxide",
+    "zram"
+  ]
 }
