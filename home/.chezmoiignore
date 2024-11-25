@@ -9,7 +9,7 @@ winget-export.json
 {{- if eq .chezmoi.os "darwin" }}
 .bashrc
 {{ else }}
-Brewfile
+.proto
 Library
 {{- end }}
 
