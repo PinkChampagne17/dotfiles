@@ -8,8 +8,7 @@
 	cp = cherry-pick
 	f = fetch
 	p = pull
-	ps = push
-	psf = push --force-with-lease
+	pushf = push --force-with-lease
 	rhu = reset --hard @{u}
 [core]
 	editor = code --wait
@@ -32,12 +31,16 @@
 	format = ssh
 [help]
 	autocorrect = prompt
+[init]
+	defaultBranch = main
 [merge]
 	conflictstyle = zdiff3
 [protocol]
 	version = 2
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
 [rebase]
 	autosquash = true
 [user]
