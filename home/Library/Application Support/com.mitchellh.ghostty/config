@@ -1,0 +1,15 @@
+background-blur-radius = 20
+background-opacity = 0.9
+command = zsh -l -c 'nu';
+cursor-style = block
+font-family = Cascadia Code NF
+font-size = 20
+font-thicken = true
+keybind = global:opt+space=toggle_visibility
+macos-titlebar-style = tabs
+minimum-contrast = 4
+theme = catppuccin-frappe
+window-new-tab-position = end
+window-padding-balance = true
+window-padding-x = 16
+window-save-state = always
