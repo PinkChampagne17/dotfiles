@@ -1,18 +1,18 @@
 {{- if eq .chezmoi.os "windows" }}
-.zshrc
 {{ else }}
 .wslconfig
 AppData
 winget-export.json
 {{- end }}
 
-{{- if eq .chezmoi.os "darwin" }}
-.bashrc
-{{ else }}
+{{- if ne .chezmoi.os "darwin" }}
 .proto
+.zshrc
+.zprofile
 Library
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
+.bashrc
 .config/nushell
 {{- end }}

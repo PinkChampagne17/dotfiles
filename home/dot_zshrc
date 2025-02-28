@@ -1,7 +1,0 @@
-source ~/mydotfiles/sh/.zshrc.sh
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	source ~/mydotfiles/sh/.zshrc_darwin.sh
-fi
-
-# eval "$(atuin init zsh)"

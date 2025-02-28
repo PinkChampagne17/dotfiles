@@ -10,3 +10,9 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd j zsh)"
 
 # alias flushdns='sudo killall -HUP mDNSResponder'
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	source ~/mydotfiles/sh/zshrc_darwin.sh
+fi
+
+# eval "$(atuin init zsh)"
