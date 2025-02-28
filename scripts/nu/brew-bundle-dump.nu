@@ -4,8 +4,19 @@ if ("./Brewfile" | path exists) {
 
 brew bundle dump
 
+let keywordsToExclude = [
+	"android-studio"
+	"cocoapods"
+	"cursor"
+	"vscode"
+	"watchman"
+	"wireshark"
+	"Xcode"
+	"zulu"
+]
+
 let editedContent = open ./Brewfile |
 	lines |
-	filter { not ($in | str starts-with "vscode") }
+	filter { |line| not ( $keywordsToExclude | any { |keyword| $line | str contains $keyword }) }
 
 $editedContent | save -f ./Brewfile

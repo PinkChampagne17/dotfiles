@@ -6,7 +6,7 @@ brew "bat"
 brew "xz"
 brew "chezmoi"
 brew "difftastic"
-brew "dockutil"
+brew "direnv"
 brew "fastfetch"
 brew "fd"
 brew "fzf"
@@ -33,6 +33,7 @@ brew "jesseduffield/lazygit/lazygit"
 cask "firefox"
 cask "font-cascadia-code-nf"
 cask "fork"
+cask "ghostty"
 cask "gitnuro"
 cask "google-chrome"
 cask "imageoptim"
@@ -53,4 +54,5 @@ mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "QQ", id: 451108668
+mas "Velja", id: 1607635845
 mas "WeChat", id: 836500024
