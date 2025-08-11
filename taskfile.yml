@@ -8,6 +8,9 @@ includes:
     taskfile: ./nixos/taskfile.yml
     dir: ./nixos
 
+env:
+  CHEZMOI_CONFIG_PATH: .config/chezmoi/chezmoi.toml
+
 tasks:
   default:
     cmds:
@@ -19,8 +22,7 @@ tasks:
 
   init:
     prompt: This is a dangerous command... Do you want to continue?
-    env:
-      CHEZMOI_CONFIG_PATH: .config/chezmoi/chezmoi.toml
+
     cmds:
       - chezmoi init
 
@@ -30,3 +32,8 @@ tasks:
 
       - task: configs:bbi
       - task: default
+
+  open-config-file:
+    aliases: [ocf]
+    cmds:
+      - $EDITOR $HOME/$CHEZMOI_CONFIG_PATH

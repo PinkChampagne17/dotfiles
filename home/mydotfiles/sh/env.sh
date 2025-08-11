@@ -1,5 +1,5 @@
-export EDITOR=code
+export EDITOR=zed # TOOD: use zeditor on Linux
 export STARSHIP_CONFIG="$HOME/mydotfiles/starship/pure.toml"
 
 # https://nextjs.org/telemetry
-export NEXT_TELEMETRY_DEBUG=1 
+export NEXT_TELEMETRY_DEBUG=1

@@ -27,18 +27,28 @@ $env.config = {
     shell_integration: {
     	osc133: false # https://github.com/nushell/nushell/issues/6214#issuecomment-2261788482
     }
-
-    hooks: {
-        env_change: {
-            PWD: [
-				{|before, after| null }
-				(source ~/mydotfiles/nu/nu_scripts/nu-hooks/nu-hooks/direnv/config.nu)
-			]
-        }
-    }
 }
 
 source ~/mydotfiles/nu/aliases.nu
 source ~/mydotfiles/nu/completions.nu
-source ~/.cache/starship/init.nu
 source ~/.zoxide.nu
+
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+
+# https://www.nushell.sh/cookbook/direnv.html#how-direnv-works
+use std/config *
+
+# Initialize the PWD hook as an empty list if it doesn't exist
+$env.config.hooks.env_change.PWD = $env.config.hooks.env_change.PWD? | default []
+
+$env.config.hooks.env_change.PWD ++= [{||
+  if (which direnv | is-empty) {
+    # If direnv isn't installed, do nothing
+    return
+  }
+
+  direnv export json | from json | default {} | load-env
+  # If direnv changes the PATH, it will become a string and we need to re-convert it to a list
+  $env.PATH = do (env-conversions).path.from_string $env.PATH
+}]

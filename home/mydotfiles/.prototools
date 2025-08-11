@@ -1,7 +1,8 @@
-deno = "2.1.1"
-node = "23.3.0"
-npm = "10.9.0"
-pnpm = "9.14.2"
+deno = "2.4.3"
+node = "^22"
+npm = "bundled"
+pnpm = "10.14.0"
+proto = "0.46.1"
 yarn = "4.5.1"
 
 [tools.node]

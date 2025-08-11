@@ -49,13 +49,15 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
-$env.EDITOR = "code"
+$env.EDITOR = match $nu.os-info.name {
+	"linux" => "zeditor"
+	"macos" => "zed"
+	"windows" => "code"
+}
 
 # https://nextjs.org/telemetry
 $env.NEXT_TELEMETRY_DEBUG = 1
 
 $env.STARSHIP_CONFIG = $"($nu.home-path)/mydotfiles/starship/pure.toml"
-mkdir ~/.cache/starship
-starship init nu | save -f ~/.cache/starship/init.nu
 
 zoxide init nushell --cmd j | save -f ~/.zoxide.nu

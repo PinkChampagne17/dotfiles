@@ -6,9 +6,10 @@ font-family = Cascadia Code NF
 font-size = 20
 font-thicken = true
 keybind = global:opt+space=toggle_visibility
+keybind = shift+enter=text:\n
 macos-titlebar-style = tabs
 minimum-contrast = 4
-theme = catppuccin-frappe
+theme = Catppuccin Frappe
 window-new-tab-position = end
 window-padding-balance = true
 window-padding-x = 16
