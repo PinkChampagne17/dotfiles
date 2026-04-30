@@ -9,15 +9,19 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "agent": {
+    "play_sound_when_agent_done": true,
+  },
+  "icon_theme": "Material Icon Theme",
   "telemetry": {
     "metrics": false,
-    "diagnostics": false
+    "diagnostics": false,
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "Gruvbox Light Soft",
-    "dark": "One Dark"
-  }
+    "light": "Catppuccin Macchiato",
+    "dark": "One Dark",
+  },
 }
