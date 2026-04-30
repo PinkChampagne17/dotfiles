@@ -17,6 +17,6 @@ let keywordsToExclude = [
 
 let editedContent = open ./Brewfile |
 	lines |
-	filter { |line| not ( $keywordsToExclude | any { |keyword| $line | str contains $keyword }) }
+	where { |line| not ( $keywordsToExclude | any { |keyword| $line | str contains $keyword }) }
 
 $editedContent | save -f ./Brewfile
