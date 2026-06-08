@@ -3,8 +3,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$HOME/.local/bin:$PATH"
 
 # proto
-export PROTO_HOME="$HOME/.proto";
-export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
+export PROTO_HOME="$HOME/.proto"
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -25,3 +25,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
 source ~/mydotfiles/sh/zprofile_dynamic.sh
+
+# opencode
+export PATH=$HOME/.opencode/bin:$PATH

@@ -7,6 +7,6 @@ indent_style = tab
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{nix,js,json,json5,yaml,yml}]
+[*.{nix,js,json,json5,jsonc,yaml,yml}]
 indent_size = 2
 indent_style = space
