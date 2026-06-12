@@ -4,15 +4,16 @@ Cross-platform dotfiles managed by [chezmoi](https://www.chezmoi.io/), targeting
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `task` | Apply dotfiles (`chezmoi apply -v`) |
-| `task init` | First-time setup — edit chezmoi config, install Homebrew packages |
-| `task ocf` | Open chezmoi config file in `$EDITOR` |
-| `task bbd` | Dump current Homebrew state to `configs/Brewfile` |
-| `task bbi` | Install packages from `configs/Brewfile` |
-| `chezmoi diff` | Preview pending changes before applying |
-| `chezmoi edit <file>` | Edit a managed file through chezmoi |
+| Command               | Description                                                       |
+| --------------------- | ----------------------------------------------------------------- |
+| `task`                | Apply dotfiles (`chezmoi apply -v`)                               |
+| `task fmt`            | Format managed files with `dprint`                                |
+| `task init`           | First-time setup — edit chezmoi config, install Homebrew packages |
+| `task ocf`            | Open chezmoi config file in `$EDITOR`                             |
+| `task bbd`            | Dump current Homebrew state to `configs/Brewfile`                 |
+| `task bbi`            | Install packages from `configs/Brewfile`                          |
+| `chezmoi diff`        | Preview pending changes before applying                           |
+| `chezmoi edit <file>` | Edit a managed file through chezmoi                               |
 
 ## Key Concepts
 
@@ -39,6 +40,7 @@ Format: `<type>[optional scope]: <description>`
 Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `ci`, `perf`, `build`
 
 Examples:
+
 - `feat: add user login`
 - `fix(auth): handle expired token`
 - `feat!: drop Node 14 support` (breaking change)

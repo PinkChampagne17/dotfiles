@@ -20,6 +20,10 @@ tasks:
     cmds:
       - corepack cache clean
 
+  fmt:
+    cmds:
+      - dprint fmt
+
   init:
     prompt: This is a dangerous command... Do you want to continue?
 

@@ -6,14 +6,15 @@ Personal preferences for AI coding agents across all projects.
 
 Before starting any task, check for custom instruction files in the project root (`./`) and personal directory (`~/.agents/` or `~/.claude/`). Apply the following dynamic loading logic:
 
-1. **If you natively auto-load `AGENTS.md` (e.g., Roo):** 
+1. **If you natively auto-load `AGENTS.md` (e.g., Roo):**
    Check if `./AGENTS.md` or `~/.agents/AGENTS.md` exists. If they exist, DO NOTHING (they are already injected). If they do NOT exist, manually read `./CLAUDE.md` or `~/.claude/CLAUDE.md` as a fallback.
-2. **If you natively auto-load `CLAUDE.md` (e.g., Cline):** 
+2. **If you natively auto-load `CLAUDE.md` (e.g., Cline):**
    Check if `./CLAUDE.md` or `~/.claude/CLAUDE.md` exists. If they exist, DO NOTHING (already injected). If they do NOT exist, manually read `./AGENTS.md` or `~/.agents/AGENTS.md` as a fallback.
-3. **If you natively support NEITHER:** 
+3. **If you natively support NEITHER:**
    Look for `AGENTS.md` or `CLAUDE.md` in the project or home directory. Manually read ONLY ONE file per level (prefer `AGENTS.md` over `CLAUDE.md` if both exist). Do NOT read both to avoid duplication.
 
 **General Rules:**
+
 - **Priority:** Project-level instructions always override Personal-level instructions on conflicts.
 - **Context:** Treat any references to "Claude" in these files as applying equally to you.
 - **Action:** Briefly state which files were natively applied or manually loaded before proceeding.
@@ -31,6 +32,7 @@ Before starting any task, check for custom instruction files in the project root
 ### Plan Verification (Confidence Loop)
 
 For complex tasks, internally verify your plan before writing code:
+
 - **Identify Risks:** Ask yourself what could go wrong. Find edge cases, missing assumptions, and potential failures.
 - **Refine the Plan:** Adjust your strategy to fix these flaws until it is solid and evidence-backed.
 - **Keep it Brief:** Do not show this full thinking process to the user. Only report major risks, necessary plan changes, or remaining doubts. If you are still unsure, inform the user before proceeding.

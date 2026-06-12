@@ -2,25 +2,25 @@
 
 ## Directory Layout
 
-| Path | Description |
-|------|-------------|
-| `home/` | Chezmoi source directory (set by `.chezmoiroot`) |
-| `home/mydotfiles/sh/` | Zsh/Bash configs (zshrc, zprofile, aliases, env) |
-| `home/mydotfiles/nu/` | Nushell configs |
-| `home/mydotfiles/claude/` | Claude Code settings and custom skills |
-| `home/mydotfiles/starship/` | Starship prompt theme |
-| `home/mydotfiles/clash/` | Clash proxy configs |
-| `home/mydotfiles/windows/` | Windows-specific configs (winget export) |
-| `home/dot_gitconfig` | Git configuration (main config) |
-| `home/dot_gitconfig_*.tmpl` | Git configuration (dynamic/work includes, templated) |
-| `home/dot_bashrc` | Bash config for Linux |
-| `home/dot_claude/` | Claude Code dotfile configs |
-| `home/AppData/` | Windows AppData configs |
-| `home/Library/` | macOS Library configs |
-| `configs/` | Brewfile, iTerm2 profile, distrobox config, task definitions |
-| `nixos/` | NixOS flake configs (independent of chezmoi) |
-| `scripts/` | Utility scripts (brew dump, alias parsing, platform setup) |
-| `via/` | Keyboard firmware configs (not managed by chezmoi) |
+| Path                        | Description                                                  |
+| --------------------------- | ------------------------------------------------------------ |
+| `home/`                     | Chezmoi source directory (set by `.chezmoiroot`)             |
+| `home/mydotfiles/sh/`       | Zsh/Bash configs (zshrc, zprofile, aliases, env)             |
+| `home/mydotfiles/nu/`       | Nushell configs                                              |
+| `home/mydotfiles/claude/`   | Claude Code settings and custom skills                       |
+| `home/mydotfiles/starship/` | Starship prompt theme                                        |
+| `home/mydotfiles/clash/`    | Clash proxy configs                                          |
+| `home/mydotfiles/windows/`  | Windows-specific configs (winget export)                     |
+| `home/dot_gitconfig`        | Git configuration (main config)                              |
+| `home/dot_gitconfig_*.tmpl` | Git configuration (dynamic/work includes, templated)         |
+| `home/dot_bashrc`           | Bash config for Linux                                        |
+| `home/dot_claude/`          | Claude Code dotfile configs                                  |
+| `home/AppData/`             | Windows AppData configs                                      |
+| `home/Library/`             | macOS Library configs                                        |
+| `configs/`                  | Brewfile, iTerm2 profile, distrobox config, task definitions |
+| `nixos/`                    | NixOS flake configs (independent of chezmoi)                 |
+| `scripts/`                  | Utility scripts (brew dump, alias parsing, platform setup)   |
+| `via/`                      | Keyboard firmware configs (not managed by chezmoi)           |
 
 ## Symlink-Template Pattern
 
@@ -54,6 +54,7 @@ The project uses [Task](https://taskfile.dev/) (Taskfile) as a task runner. The 
 Key tasks:
 
 - `task` (default) — runs `chezmoi apply -v`
+- `task fmt` — formats managed files with `dprint`
 - `task init` — first-time setup flow
 - `task configs:bbd` / `task bbd` — dump Homebrew state to Brewfile
 - `task configs:bbi` / `task bbi` — install from Brewfile

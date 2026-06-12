@@ -15,6 +15,7 @@ Analyze the current project and generate an `AGENTS.md` file following the open 
 Check whether `CLAUDE.md` exists at the project root and determine its type (real file or symlink). Also check if `.claude/CLAUDE.md` already exists as a symlink to `../AGENTS.md`.
 
 **macOS / Linux:**
+
 ```bash
 # Check CLAUDE.md type
 if [ -L CLAUDE.md ]; then echo "symlink"; elif [ -f CLAUDE.md ]; then echo "real-file"; else echo "not-found"; fi
@@ -23,6 +24,7 @@ if [ -L CLAUDE.md ]; then echo "symlink"; elif [ -f CLAUDE.md ]; then echo "real
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 # Check CLAUDE.md type
 if (Test-Path CLAUDE.md) {
@@ -92,6 +94,7 @@ Generate `AGENTS.md` at the project root. If there was insufficient CLAUDE.md co
 Follow these principles when deciding what goes into AGENTS.md:
 
 **Cover what matters** — Add sections that help an agent work effectively with the project. Popular choices:
+
 - Project overview
 - Build and test commands
 - Code style guidelines
@@ -125,6 +128,7 @@ Reference them from AGENTS.md with relative links:
 
 ```markdown
 ## Detailed Documentation
+
 - [Architecture](.agents/docs/architecture.md)
 - [API Reference](.agents/docs/api.md)
 ```
@@ -149,6 +153,7 @@ Format: `<type>[optional scope]: <description>`
 Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `ci`, `perf`, `build`
 
 Examples:
+
 - `feat: add user login`
 - `fix(auth): handle expired token`
 - `feat!: drop Node 14 support` (breaking change)
@@ -175,6 +180,7 @@ Throughout the task, if you discover something that **required multiple attempts
 **Litmus test:** If another agent could discover it by reading existing code, config files, or documentation — don't record it. Only record things you had to learn the hard way.
 
 Examples of what to record:
+
 - Commands that must run in a specific non-obvious order
 - Environment or CI quirks that cause silent failures
 - Workarounds for undocumented behavior

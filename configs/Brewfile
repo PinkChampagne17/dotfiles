@@ -1,69 +1,146 @@
+tap "anomalyco/tap"
+tap "detachhead/tap"
 tap "farion1231/ccswitch"
 tap "homebrew/bundle"
 tap "jesseduffield/lazygit"
 tap "jetpackduba/apps"
+# Code searching, linting, rewriting
 brew "ast-grep"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# General-purpose data compression with high compression ratio
 brew "xz"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
 brew "caddy"
+# Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
+# Dependency manager for Cocoa projects
+# Diff that understands syntax
 brew "difftastic"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Pluggable and configurable code formatting platform written in Rust
+brew "dprint"
+# Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Git extension for versioning large files
 brew "git-lfs"
+# Open-source GitLab command-line tool
 brew "glab"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Task is a task runner/build tool that aims to be simpler and easier to use
 brew "go-task"
+# Improved top (interactive process viewer)
 brew "htop"
+# Command-line benchmarking tool
 brew "hyperfine"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Mac App Store command-line interface
 brew "mas"
+# 'traceroute' and 'ping' in a single tool
 brew "mtr"
+# Modern shell for the GitHub era
 brew "nushell"
+# Renders an animated, color, ANSI-text loop of the Poptart Cat
 brew "nyancat"
+# Command-line Git information tool
 brew "onefetch"
-brew "poppler"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Autoformat shell script source code
 brew "shfmt"
+# Cross-shell prompt for astronauts
 brew "starship"
+# Program that allows you to count code, quickly
 brew "tokei"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Watch files and take action when they change
+# Internet file retriever
 brew "wget"
+# CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
+# Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Enable Windows-like alt-tab
 cask "alt-tab"
+# Tools for building Android applications
+# Configuration manager for AI coding agents
 cask "cc-switch"
+# OpenAI's coding agent that runs in your terminal
 cask "codex"
+# Write, edit, and chat about your code with AI
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Web browser
 cask "firefox"
 cask "font-cascadia-code-nf"
+# GIT client
 cask "fork"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Web browser
 cask "google-chrome"
+# Tool to optimise images to a smaller size
 cask "imageoptim"
+# Multi-platform web browser
 cask "microsoft-edge"
+# Tool to control external monitor brightness & volume
 cask "monitorcontrol"
+# Smooths scrolling and set mouse scroll directions independently
 cask "mos"
+# Replacement for Docker Desktop
 cask "orbstack"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Git client based on the IntelliJ platform
+cask "detachhead/tap/rebased"
+# Team communication and collaboration software
 cask "slack"
+# Desktop client for Telegram messenger
 cask "telegram-desktop"
+# Open-source code editor
 cask "visual-studio-code"
+# Create, manage, and run virtual machines
 cask "vmware-fusion"
+# Network protocol analyzer
+# Multiplayer code editor
 cask "zed"
+# Video communication and virtual meeting platform
 cask "zoom-for-it-admins"
+# OpenJDK distribution from Azul
 mas "Fluent Reader", id: 1520907427
 mas "GarageBand", id: 682658836
 mas "LocalSend", id: 1661733229
 mas "Microsoft Excel", id: 462058435
+mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "QQ", id: 451108668
 mas "Slack", id: 803453959
 mas "Velja", id: 1607635845
 mas "WeChat", id: 836500024
+go "github.com/isaacphi/mcp-language-server"
+npm "corepack"
