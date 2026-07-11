@@ -1,7 +1,6 @@
 alias cwd = code .
 alias md = mkdir
 alias ni = touch
-alias grhu = git reset --hard @{u}
 alias pn = pnpm
 alias pi = pn i
 
