@@ -2,3 +2,8 @@
 refreshPeriod = "168h"
 type = "git-repo"
 url = "git@github.com:nushell/nu_scripts.git"
+
+["mydotfiles/agents/vendor/mattpocock-skills"]
+refreshPeriod = "168h"
+type = "git-repo"
+url = "git@github.com:mattpocock/skills.git"
