@@ -5,6 +5,13 @@ alias grhu = git reset --hard @{u}
 alias pn = pnpm
 alias pi = pn i
 
+def pnl [] {
+	git restore -SW pnpm-lock.yaml
+	pnpm i --lockfile-only
+	pnpm dedupe --lockfile-only
+	git add pnpm-lock.yaml
+}
+
 def pipd [] {
 	pi; pn dev;
 }
