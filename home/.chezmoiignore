@@ -1,7 +1,7 @@
-{{- if eq .chezmoi.os "windows" }}
-{{ else }}
+{{- if ne .chezmoi.os "windows" }}
 .wslconfig
 AppData
+mydotfiles/windows
 winget-export.json
 {{- end }}
 
