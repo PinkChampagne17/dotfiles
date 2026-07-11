@@ -16,10 +16,6 @@ def pipd [] {
 	pi; pn dev;
 }
 
-def pips [] {
-	pi; pn start;
-}
-
 def l [] {
 	ls . | get name | grid
 }
