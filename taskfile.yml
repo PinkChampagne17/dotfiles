@@ -41,3 +41,7 @@ tasks:
     aliases: [ocf]
     cmds:
       - $EDITOR $HOME/$CHEZMOI_CONFIG_PATH
+
+  update:
+    cmds:
+      - dprint config update
