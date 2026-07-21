@@ -7,7 +7,8 @@
 | `home/`                     | Chezmoi source directory (set by `.chezmoiroot`)             |
 | `home/mydotfiles/sh/`       | Zsh/Bash configs (zshrc, zprofile, aliases, env)             |
 | `home/mydotfiles/nu/`       | Nushell configs                                              |
-| `home/mydotfiles/claude/`   | Claude Code settings and custom skills                       |
+| `home/mydotfiles/claude/`   | Claude Code settings                                         |
+| `skills/`                   | Local AI-agent skill sources, synchronized by the Skills CLI |
 | `home/mydotfiles/starship/` | Starship prompt theme                                        |
 | `home/mydotfiles/clash/`    | Clash proxy configs                                          |
 | `home/mydotfiles/windows/`  | Windows-specific configs (winget export)                     |
@@ -53,7 +54,8 @@ The project uses [Task](https://taskfile.dev/) (Taskfile) as a task runner. The 
 
 Key tasks:
 
-- `task` (default) — runs `chezmoi apply -v`
+- `task` (default) — applies dotfiles, then synchronizes Matt Pocock, anti-pua, and local skills for universal and Claude Code agents
+- `task apply` — runs `chezmoi apply -v` only
 - `task fmt` — formats managed files with `dprint`
 - `task init` — first-time setup flow
 - `task configs:bbd` / `task bbd` — dump Homebrew state to Brewfile
@@ -64,6 +66,8 @@ Key tasks:
 `.chezmoiexternal.toml` in `home/` pulls in external repos:
 
 - `nushell/nu_scripts` — cloned into `mydotfiles/nu/nu_scripts`, refreshed weekly
+
+The default `task` uses `pnpm dlx skills` to install and synchronize Matt Pocock skills, the `anti-pua`, `nvc`, and `rethink` skills from `p-toy-factory/anti-pua`, and local skills globally for universal and Claude Code agents. Local skill sources live in the repository-root `skills/` directory, outside chezmoi's `home/` source tree; chezmoi does not manage the global skills directory.
 
 ## Data Variables
 
