@@ -3,6 +3,10 @@ alias md = mkdir
 alias ni = touch
 alias pn = pnpm
 alias pi = pn i
+alias zwd = match $nu.os-info.name {
+	"linux" => { zeditor . },
+	_ => { zed . },
+}
 
 def pnl [] {
 	git restore -SW pnpm-lock.yaml
