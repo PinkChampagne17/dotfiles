@@ -1,0 +1,21 @@
+version: "3"
+
+tasks:
+  upgrade-tools:
+    aliases: [ut]
+    platforms: [darwin]
+    cmds:
+      - brew update
+      - brew upgrade
+      - proto upgrade --yes
+      - cmd: proto outdated --update --yes
+        dir: "{{.HOME}}"
+      - cmd: proto install --yes
+        dir: "{{.HOME}}"
+
+  clean:
+    platforms: [darwin]
+    cmds:
+      - brew cleanup
+      - pnpm store prune
+      - proto clean cache --yes

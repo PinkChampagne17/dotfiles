@@ -57,6 +57,9 @@ Key tasks:
 - `task` (default) — applies dotfiles, then synchronizes Matt Pocock, anti-pua, and local skills for universal and Claude Code agents
 - `task apply` — runs `chezmoi apply -v` only
 - `task fmt` — formats managed files with `dprint`
+- `task update` — updates this repository's dprint configuration
+- `task os:upgrade-tools` / `task os:ut` — upgrades Homebrew and proto-managed tools on macOS
+- `task os:clean` — cleans Homebrew, pnpm, and proto caches on macOS
 - `task init` — first-time setup flow
 - `task configs:bbd` / `task bbd` — dump Homebrew state to Brewfile
 - `task configs:bbi` / `task bbi` — install from Brewfile

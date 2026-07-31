@@ -7,6 +7,8 @@ includes:
   nixos:
     taskfile: ./nixos/taskfile.yml
     dir: ./nixos
+  os:
+    taskfile: ./os.taskfile.yml
 
 env:
   CHEZMOI_CONFIG_PATH: .config/chezmoi/chezmoi.toml
@@ -34,10 +36,6 @@ tasks:
           -s handoff
       - pnpm dlx skills add p-toy-factory/anti-pua --yes --global --agent universal claude-code -s '*'
       - pnpm dlx skills add ./skills --yes --global --agent universal claude-code -s '*'
-
-  clean:
-    cmds:
-      - corepack cache clean
 
   fmt:
     cmds:
