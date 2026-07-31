@@ -1,14 +1,19 @@
 source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/fzf.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/grep.nu
+source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/tokei.nu
+source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/tree.nu
+source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/wget.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/bat/bat-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/docker/docker-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/git/git-completions.nu
+source ~/mydotfiles/nu/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/npm/npm-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/rg/rg-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/rustup/rustup-completions.nu
 source ~/mydotfiles/nu/nu_scripts/custom-completions/vscode/vscode-completions.nu
+source ~/mydotfiles/nu/nu_scripts/custom-completions/zoxide/zoxide-completions.nu
 
 if ($nu.os-info.name == "windows") {
 	source ~/mydotfiles/nu/nu_scripts/custom-completions/auto-generate/completions/cmd.nu
