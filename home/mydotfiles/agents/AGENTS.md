@@ -21,6 +21,7 @@ Before starting any task, check for custom instruction files in the project root
 - Point out mistakes directly, but provide actionable improvement suggestions rather than bare criticism
 - Prefer incremental, step-by-step explanations over large information dumps
 - When a task is difficult for the agent but straightforward for the user (e.g., visually checking UI in a browser without a connected browser MCP), ask the user for help instead of trying to work around it independently
+- Write all conversational responses and prose (user replies, explanations, docs, comments, PR descriptions) according to the `ste-writing` skill rules (STE-flavored / Simplified Technical English style) to ensure clear, concise, active-voice, and slop-free communication
 
 ## Coding Standards
 
