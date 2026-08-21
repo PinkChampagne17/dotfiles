@@ -8,6 +8,7 @@
 
 $env.config = {
     show_banner: false
+    max_last_result_size: 1Mb
 
     rm: {
         always_trash: true
