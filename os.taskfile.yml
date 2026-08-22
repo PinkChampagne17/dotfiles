@@ -14,8 +14,18 @@ tasks:
         dir: "{{.HOME}}"
 
   clean:
+    cmds:
+      - pnpm store prune
+      - proto clean cache --yes
+      - task: clean-darwin
+      - task: clean-windows
+
+  clean-darwin:
     platforms: [darwin]
     cmds:
       - brew cleanup
-      - pnpm store prune
-      - proto clean cache --yes
+
+  clean-windows:
+    platforms: [windows]
+    cmds:
+      - scoop cleanup --all --cache

@@ -1,4 +1,6 @@
-{{- if ne .chezmoi.os "windows" }}
+{{- if eq .chezmoi.os "windows" }}
+.config/zed
+{{- else }}
 .wslconfig
 AppData
 mydotfiles/windows

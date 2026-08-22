@@ -51,8 +51,7 @@ $env.NU_PLUGIN_DIRS = [
 
 $env.EDITOR = match $nu.os-info.name {
 	"linux" => "zeditor"
-	"macos" => "zed"
-	"windows" => "code"
+	_ => "zed"
 }
 
 # https://nextjs.org/telemetry

@@ -28,7 +28,7 @@
   "buffer_font_family": "Cascadia Code NF",
   "agent": {
     "dock": "right",
-    "play_sound_when_agent_done": true
+    "play_sound_when_agent_done": "always"
   },
   "icon_theme": "Material Icon Theme",
   "telemetry": {
@@ -39,7 +39,7 @@
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Macchiato",
-    "dark": "One Dark"
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
   }
 }

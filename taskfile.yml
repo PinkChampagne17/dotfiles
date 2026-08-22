@@ -17,11 +17,23 @@ tasks:
   default:
     cmds:
       - task: apply
+      - task: apply-npm-config
       - task: skills
 
   apply:
     cmds:
       - chezmoi apply -v
+
+  apply-npm-config:
+    cmds:
+      - task: apply-npm-config-windows
+
+  apply-npm-config-windows:
+    platforms: [windows]
+    cmds:
+      - pnpm config set proxy http://localhost:7890
+      - pnpm config set https-proxy http://localhost:7890
+      - pnpm config set scriptShell "C:\\Program Files\\git\\bin\\bash.exe"
 
   skills:
     cmds:
@@ -48,7 +60,7 @@ tasks:
       - chezmoi init
 
       # TODO: For Windows
-      - platform: [darwin, linux]
+      - platforms: [darwin, linux]
         cmd: nano $HOME/$CHEZMOI_CONFIG_PATH
 
       - task: configs:bbi
