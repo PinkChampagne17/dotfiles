@@ -1,0 +1,11 @@
+# `.nu` is ambiguous between Nu and Nushell; this repository uses Nushell.
+*.nu linguist-language=Nushell
+
+# Extensionless files with unambiguous script or template content.
+home/dot_bashrc linguist-language=Shell
+home/.chezmoiignore linguist-language=Go-Template
+
+# Data configuration: improve GitHub file recognition without forcing language statistics.
+home/mydotfiles/.prototools linguist-language=TOML
+home/dot_gitconfig linguist-language=Git-Config
+home/dot_wslconfig linguist-language=INI
