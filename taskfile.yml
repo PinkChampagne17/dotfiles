@@ -39,15 +39,18 @@ tasks:
   skills:
     cmds:
       - >-
-          pnpm dlx skills add mattpocock/skills --yes --global --agent universal claude-code
-          -s batch-grill-me
-          -s code-review
-          -s domain-modeling
-          -s grill-me
-          -s grill-with-docs
-          -s grilling
-          -s handoff
+        pnpm dlx skills add mattpocock/skills --yes --global --agent universal claude-code
+        -s batch-grill-me
+        -s code-review
+        -s domain-modeling
+        -s grill-me
+        -s grill-with-docs
+        -s grilling
+        -s handoff
+        -s wait-what
+        -s wayfinder
       - pnpm dlx skills add p-toy-factory/anti-pua --yes --global --agent universal claude-code -s '*'
+      - pnpm dlx skills add Yevanchen/reclaim-code-entropy --yes --global --agent universal claude-code -s '*'
       - pnpm dlx skills add ./skills --yes --global --agent universal claude-code -s '*'
 
   fmt:
