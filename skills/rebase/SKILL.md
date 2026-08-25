@@ -25,4 +25,4 @@ disable-model-invocation: true
 - On completion, report the recorded rollback point. Use `AskUserQuestion` to ask whether to force-push:
   - "Yes, push with --force-with-lease"
   - "No, I'll push later"
-  Push rewritten history only with explicit user authorization, using `git push --force-with-lease`.
+    Push rewritten history only with explicit user authorization, using `git push --force-with-lease`.

@@ -26,6 +26,7 @@ git add pnpm-lock.yaml
 ```
 
 If any command fails:
+
 1. Stop execution.
 2. Report the failure and any partial lockfile state.
 3. Do not continue the Git operation.
@@ -33,6 +34,7 @@ If any command fails:
 ## Confirm the Result
 
 Verify that `pnpm-lock.yaml` meets these conditions:
+
 - It has no Git conflicts.
 - It is valid for the resolved dependency inputs.
 - It is staged.
