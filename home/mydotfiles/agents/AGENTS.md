@@ -35,7 +35,11 @@ For complex tasks, internally verify your plan before writing code:
 
 ## Code Style
 
-- Detailed rules and examples: [`./references/code-style.md`](./references/code-style.md)
+- Prefer readability over raw performance.
+- Use descriptive variable names instead of short, unclear names.
+- Prefer declarative, pipeline-style operations (`map`, `filter`, `reduce`) over imperative loops unless loops improve readability.
+- Use immutable bindings (`const`, `val`) by default.
+- Break nested expressions into named variables to keep logic linear and readable.
 
 ## Testing
 
@@ -43,7 +47,11 @@ For complex tasks, internally verify your plan before writing code:
 
 ## Git
 
-- Git workflow rules: [`./references/git.md`](./references/git.md)
+- Ask for user approval before you run any command that changes Git state.
+- Never add changed files to the staging area (`git add`) proactively after you edit code. Keep changes unstaged.
+- Back up your work before you run destructive Git commands (`reset`, `rebase`, `rm`, `checkout --`, or force push). Prefer a temporary branch.
+- When you force-push, always use `git push --force-with-lease` instead of `git push --force`.
+- When you create a commit, add the agent as a co-author in the commit message.
 
 ## Self-Maintenance
 
