@@ -4,7 +4,7 @@
   "default_agent": "plan",
   "lsp": true,
   "enabled_providers": ["ai-gateway"],
-  "model": "ai-gateway/gemini-3.7-flash",
+  "model": "ai-gateway/deepseek-v4-flash",
   "provider": {
     "ai-gateway": {
       "npm": "@ai-sdk/openai-compatible",
@@ -76,21 +76,21 @@
           },
         },
         "deepseek-v4-flash": {
-          "id": "deepseek/deepseek-v4-flash-0731",
-          "name": "DeepSeek V4 Flash 0731",
+          "id": "deepseek/deepseek-v4-flash-vision-exp",
+          "name": "DeepSeek V4 Flash Vision Exp",
           "cost": {
-            "input": 0.13,
-            "output": 0.26,
-            "cache_read": 0.028,
+            "input": 0.22,
+            "output": 0.66,
+            "cache_read": 0.007,
           },
           "limit": {
-            "context": 1000000,
-            "output": 384000,
+            "context": 1048576,
+            "output": 1048576,
           },
           "tool_call": true,
           "reasoning": true,
           "modalities": {
-            "input": ["text"],
+            "input": ["text", "image"],
             "output": ["text"],
           },
         },
@@ -151,9 +151,9 @@
             "output": ["text"],
           },
         },
-        "gemini-3.7-flash": {
-          "id": "google/gemini-3.7-flash",
-          "name": "Gemini 3.7 Flash",
+        "gemini-3.8-flash": {
+          "id": "google/gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash",
           "cost": {
             "input": 0.75,
             "output": 3.75,
