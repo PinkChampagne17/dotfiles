@@ -38,6 +38,7 @@ tasks:
 
   skills:
     cmds:
+      - pnpm dlx skills remove --global --all
       - >-
         pnpm dlx skills add mattpocock/skills --yes --global --agent universal claude-code
         -s batch-grill-me
@@ -47,6 +48,7 @@ tasks:
         -s grill-with-docs
         -s grilling
         -s handoff
+        -s improve-codebase-architecture
         -s wait-what
         -s wayfinder
       - pnpm dlx skills add p-toy-factory/anti-pua --yes --global --agent universal claude-code -s '*'
