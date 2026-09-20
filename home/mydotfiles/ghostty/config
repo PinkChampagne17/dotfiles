@@ -3,7 +3,7 @@ background-opacity = 0.9
 command = zsh -l -c 'nu';
 cursor-style = block
 font-family = Cascadia Code NF
-font-size = 20
+font-size = 24
 font-thicken = true
 keybind = global:opt+space=toggle_visibility
 keybind = shift+enter=text:\n
