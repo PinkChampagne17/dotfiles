@@ -4,7 +4,7 @@
   "default_agent": "plan",
   "lsp": true,
   "enabled_providers": ["ai-gateway"],
-  "model": "ai-gateway/deepseek-v4-flash",
+  "model": "ai-gateway/deepseek-v4.1-flash",
   "provider": {
     "ai-gateway": {
       "npm": "@ai-sdk/openai-compatible",
@@ -75,32 +75,13 @@
             "output": ["text"],
           },
         },
-        "deepseek-v4-flash": {
-          "id": "deepseek/deepseek-v4-flash-vision-exp",
-          "name": "DeepSeek V4 Flash Vision Exp",
+        "deepseek-v4.1-flash": {
+          "id": "deepseek/deepseek-v4.1-flash",
+          "name": "DeepSeek V4.1 Flash",
           "cost": {
-            "input": 0.22,
-            "output": 0.66,
-            "cache_read": 0.007,
-          },
-          "limit": {
-            "context": 1048576,
-            "output": 1048576,
-          },
-          "tool_call": true,
-          "reasoning": true,
-          "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"],
-          },
-        },
-        "deepseek-v4-pro": {
-          "id": "deepseek/deepseek-v4-pro-0813",
-          "name": "DeepSeek V4 Pro 0813",
-          "cost": {
-            "input": 1.32,
-            "output": 3.96,
-            "cache_read": 0.132,
+            "input": 0.15,
+            "output": 0.6,
+            "cache_read": 0.015,
           },
           "limit": {
             "context": 1000000,
@@ -109,7 +90,7 @@
           "tool_call": true,
           "reasoning": true,
           "modalities": {
-            "input": ["text"],
+            "input": ["text", "image"],
             "output": ["text"],
           },
         },
@@ -248,5 +229,15 @@
         },
       },
     },
+  },
+  "compaction": {
+    "auto": true,
+    // Auto-compaction triggers when estimated tokens exceed:
+    //   limit.context - max(limit.output, reserved)
+    // All models here use limit.context = 1000000 and limit.output = 384000,
+    // so reserved = 1000000 - 256000 = 744000 keeps the trigger at ~256k.
+    // Caveat: reserved is global, so a model with a different limit.context
+    // shifts the trigger (e.g. a 2M window would trigger at 1256000).
+    "reserved": 744000,
   },
 }
