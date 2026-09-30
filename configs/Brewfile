@@ -61,8 +61,6 @@ brew "nyancat"
 brew "onefetch"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# AI coding agent, built for the terminal
-brew "opencode"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Autoformat shell script source code
@@ -84,6 +82,8 @@ brew "worktrunk"
 brew "yazi"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Tools for building Android applications
