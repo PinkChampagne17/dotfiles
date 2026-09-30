@@ -59,10 +59,12 @@ brew "nushell"
 brew "nyancat"
 # Command-line Git information tool
 brew "onefetch"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Documentation generator plugin for Google Protocol Buffers
+brew "protoc-gen-doc"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Autoformat shell script source code
 brew "shfmt"
 # Cross-shell prompt for astronauts
@@ -89,6 +91,8 @@ cask "alt-tab"
 # Tools for building Android applications
 # Configuration manager for AI coding agents
 cask "cc-switch"
+# Another Mihomo GUI
+cask "clash-party"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
 # Write, edit, and chat about your code with AI
@@ -103,6 +107,8 @@ cask "fork"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
+# Homebrew's official GUI
+cask "homebrew-app"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
 # Multi-platform web browser
@@ -115,8 +121,7 @@ cask "mos"
 cask "orbstack"
 # Control your tools with a few keystrokes
 cask "raycast"
-# Git client based on the IntelliJ platform
-cask "detachhead/tap/rebased"
+cask "rebased"
 # Team communication and collaboration software
 cask "slack"
 # Desktop client for Telegram messenger
