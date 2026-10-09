@@ -7,11 +7,11 @@ export PROTO_HOME="$HOME/.proto"
 export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# export PNPM_HOME="$HOME/Library/pnpm"
+# case ":$PATH:" in
+# *":$PNPM_HOME:"*) ;;
+# *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
 # pnpm end
 
 # https://reactnative.dev/docs/set-up-your-environment?os=macos&platform=android
