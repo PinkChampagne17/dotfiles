@@ -1,22 +1,15 @@
-alias cwd = code .
-alias md = mkdir
-alias ni = touch
-alias pn = pnpm
-alias pi = pn i
-alias zwd = match $nu.os-info.name {
-	"linux" => { zeditor . },
-	_ => { zed . },
-}
-
-def pnl [] {
-	git restore -SW pnpm-lock.yaml
-	pnpm i --lockfile-only
-	pnpm dedupe --lockfile-only
-	git add pnpm-lock.yaml
-}
-
-def pipd [] {
-	pi; pn dev;
+$env.config.abbreviations = {
+	cwd: "code ."
+	md: "mkdir"
+	ni: "touch"
+	pn: "pnpm"
+	pi: "pnpm i"
+	zwd: (match $nu.os-info.name {
+		"linux" => "zeditor .",
+		_ => "zed .",
+	})
+	pnl: "git restore -SW pnpm-lock.yaml; pnpm i --lockfile-only; pnpm dedupe --lockfile-only; git add pnpm-lock.yaml"
+	pipd: "pnpm i; pnpm dev"
 }
 
 def l [] {
