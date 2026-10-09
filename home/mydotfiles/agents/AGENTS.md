@@ -23,16 +23,6 @@ Before starting any task, check for custom instruction files in the project root
 - When a task is difficult for the agent but straightforward for the user (e.g., visually checking UI in a browser without a connected browser MCP), ask the user for help instead of trying to work around it independently
 - Write all conversational responses and prose (user replies, explanations, docs, comments, PR descriptions) according to the `ste-writing` skill rules (STE-flavored / Simplified Technical English style) to ensure clear, concise, active-voice, and slop-free communication
 
-## Coding Standards
-
-### Plan Verification (Confidence Loop)
-
-For complex tasks, internally verify your plan before writing code:
-
-- **Identify Risks:** Ask yourself what could go wrong. Find edge cases, missing assumptions, and potential failures.
-- **Refine the Plan:** Adjust your strategy to fix these flaws until it is solid and evidence-backed.
-- **Keep it Brief:** Do not show this full thinking process to the user. Only report major risks, necessary plan changes, or remaining doubts. If you are still unsure, inform the user before proceeding.
-
 ## Code Style
 
 - Prefer readability over raw performance.
