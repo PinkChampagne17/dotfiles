@@ -4,6 +4,7 @@ $env.config.abbreviations = {
 	ni: "touch"
 	pn: "pnpm"
 	pi: "pnpm i"
+	px: "pnpm exec"
 	zwd: (match $nu.os-info.name {
 		"linux" => "zeditor .",
 		_ => "zed .",
@@ -22,7 +23,6 @@ def ll [pattern: string = "."] {
 		"windows" => $baseColumns,
 		_ => [...$baseColumns mode user group],
 	}
-
 	ls -alms ($pattern | str replace -r "^~" $env.HOME) | select ...$columns
 }
 

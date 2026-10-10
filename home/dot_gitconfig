@@ -7,6 +7,7 @@
 	cob = checkout -b
 	cp = cherry-pick
 	f = fetch
+	fixup = commit --fixup
 	p = pull
 	pushf = push --force-with-lease
 	rhu = reset --hard @{u}
