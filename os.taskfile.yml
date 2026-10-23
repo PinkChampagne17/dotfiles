@@ -25,8 +25,10 @@ tasks:
     platforms: [darwin]
     cmds:
       - brew cleanup
+      - rm -rf "$HOME/.codex/worktrees"
 
   clean-windows:
     platforms: [windows]
     cmds:
       - scoop cleanup --all --cache
+      - rm -rf "$USERPROFILE/.codex/worktrees"
