@@ -1,9 +1,9 @@
-deno = "2.4.3"
-node = "24.15.0"
+deno = "2.9.8"
+node = "24.22.1"
 npm = "bundled"
-pnpm = "11.10.0"
-yarn = "4.5.1"
-proto = "0.58.0"
+pnpm = "12.15.0"
+yarn = "4.18.1"
+proto = "0.63.2"
 
 [tools.node]
 bundled-npm = true
