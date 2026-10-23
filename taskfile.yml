@@ -38,16 +38,50 @@ tasks:
 
   skills:
     cmds:
+      - pnpm dlx skills remove --global --all
       - >-
-          pnpm dlx skills add mattpocock/skills --yes --global --agent universal claude-code
-          -s batch-grill-me
-          -s code-review
-          -s domain-modeling
-          -s grill-me
-          -s grill-with-docs
-          -s grilling
-          -s handoff
+        pnpm dlx skills add mattpocock/skills --yes --global --agent universal claude-code
+        -s batch-grill-me
+        -s code-review
+        -s domain-modeling
+        -s grill-me
+        -s grill-with-docs
+        -s grilling
+        -s handoff
+        -s improve-codebase-architecture
+        -s writing-for-agents
+        -s wait-what
+        -s wayfinder
       - pnpm dlx skills add p-toy-factory/anti-pua --yes --global --agent universal claude-code -s '*'
+      # cursor/plugins skills. One call per source, so the mapping lives here.
+      # Convention: a skill I did not ask for stays in this block with the skill that needs it.
+      # Explicit: interrogate, reflect, sharpen, statechart.
+      # Indirect, in the same order as the -s lines below:
+      #   arena, in-your-own-words -> interrogate
+      #   principle-laziness-protocol, principle-prove-it-works,
+      #   principle-redesign-from-first-principles,
+      #   principle-separate-before-serializing-shared-state,
+      #   poteto-mode -> arena, and reflect, for its Subagents section only.
+      #     Its other routes cite about 34 pstack skills that are not installed.
+      #   principle-encode-lessons-in-structure -> reflect
+      #   create-formal-verification-skill, maintain-formal-verification-skill
+      #     -> companion of statechart, they read TLA+ results with /statechart
+      - >-
+        pnpm dlx skills add https://github.com/cursor/plugins/tree/main --yes --global --agent universal claude-code
+        -s interrogate
+        -s reflect
+        -s sharpen
+        -s statechart
+        -s arena
+        -s in-your-own-words
+        -s principle-laziness-protocol
+        -s principle-prove-it-works
+        -s principle-redesign-from-first-principles
+        -s principle-separate-before-serializing-shared-state
+        -s poteto-mode
+        -s principle-encode-lessons-in-structure
+        -s create-formal-verification-skill
+        -s maintain-formal-verification-skill
       - pnpm dlx skills add ./skills --yes --global --agent universal claude-code -s '*'
 
   fmt:

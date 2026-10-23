@@ -10,7 +10,7 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/) and [Task](htt
 - **Toolchain**: proto for tool and language versioning
 - **Shells**: Zsh, Nushell, and Starship prompt
 - **Terminal and Editor**: Ghostty (Terminal), Zed (Editor)
-- **AI Coding Agents**: Unified agent rules (`AGENTS.md`, `CLAUDE.md`, opencode) and global skills
+- **AI Coding Agents**: Unified agent rules (`AGENTS.md`) and global skills
 
 ---
 
@@ -51,15 +51,15 @@ task init
 
 ## Daily Workflows
 
-| Command               | Description                                                           |
-| --------------------- | --------------------------------------------------------------------- |
-| `task` / `task apply` | Apply chezmoi changes, sync npm config, and install skills            |
-| `task init`           | Run initial setup (edit config, install dependencies, and apply)      |
-| `task os:ut`          | Upgrade system packages (Brew) and proto toolchains                   |
-| `task os:clean`       | Clean package caches (Brew / Scoop, proto, pnpm)                      |
-| `task nixos:routine`  | _(NixOS only)_ Update Nix channels, collect garbage, and rebuild      |
-| `task fmt`            | Format config files with `dprint`                                     |
-| `task ocf`            | Open the chezmoi configuration file in `$EDITOR`                      |
+| Command               | Description                                                      |
+| --------------------- | ---------------------------------------------------------------- |
+| `task` / `task apply` | Apply chezmoi changes, sync npm config, and install skills       |
+| `task init`           | Run initial setup (edit config, install dependencies, and apply) |
+| `task os:ut`          | Upgrade system packages (Brew) and proto toolchains              |
+| `task os:clean`       | Clean package caches (Brew / Scoop, proto, pnpm)                 |
+| `task nixos:routine`  | _(NixOS only)_ Update Nix channels, collect garbage, and rebuild |
+| `task fmt`            | Format config files with `dprint`                                |
+| `task ocf`            | Open the chezmoi configuration file in `$EDITOR`                 |
 
 ---
 
