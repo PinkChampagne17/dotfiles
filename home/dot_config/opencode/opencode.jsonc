@@ -7,7 +7,7 @@
       "model": "ai-gateway/gpt-6-luna",
     },
     "explore": {
-      "model": "ai-gateway/gpt-6-luna",
+      "model": "ai-gateway/deepseek-v4.1-flash-1017",
     },
   },
   "policies": [
@@ -161,6 +161,48 @@
             "cache": {
               "read": 0.2,
               "write": 5,
+            },
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000,
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "pdf"],
+            "output": ["text"],
+          },
+        },
+        "gpt-6.1-terra": {
+          "modelID": "openai/gpt-6.1-terra",
+          "name": "GPT-6.1 Terra",
+          "cost": {
+            "input": 1,
+            "output": 5,
+            "cache": {
+              "read": 0.05,
+              "write": 1.25,
+            },
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000,
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "pdf"],
+            "output": ["text"],
+          },
+        },
+        "gpt-6.1-terra-fast": {
+          "modelID": "openai/gpt-6.1-terra-fast",
+          "name": "GPT-6.1 Terra (Fast)",
+          "cost": {
+            "input": 2,
+            "output": 10,
+            "cache": {
+              "read": 0.1,
+              "write": 2.5,
             },
           },
           "limit": {
