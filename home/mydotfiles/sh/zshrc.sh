@@ -1,8 +1,8 @@
 source ~/mydotfiles/sh/base.sh
 
 # if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-    # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
-    # starship preset pure-preset -o ~/starship/pure.toml
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
+# starship preset pure-preset -o ~/starship/pure.toml
 # fi
 
 # eval "$(fnm env --shell zsh --use-on-cd --corepack-enabled)"
