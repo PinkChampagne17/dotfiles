@@ -1,14 +1,15 @@
-{ pkgs, pkgs-unstable, ... }:
-
 {
-  environment.systemPackages =
-    with pkgs;
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
+  environment.systemPackages = with pkgs;
     [
       piper
       snapshot
       wireshark
     ]
-    ++ (with pkgs-unstable; [ zed-editor ]);
+    ++ (with pkgs-unstable; [zed-editor]);
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;

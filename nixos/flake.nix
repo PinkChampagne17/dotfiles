@@ -4,58 +4,59 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs =
-    { nixpkgs, nixpkgs-unstable, ... }:
-    let
-      buildSpecialArgs = system: {
-        pkgs-unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
-    in
-    {
-      nixosConfigurations = {
-        neeko = nixpkgs.lib.nixosSystem rec {
-          system = "x86_64-linux";
-          specialArgs = buildSpecialArgs system;
-          modules = [ ./neeko.nix ];
-        };
-
-        nixos-5600 = nixpkgs.lib.nixosSystem rec {
-          system = "x86_64-linux";
-          specialArgs = buildSpecialArgs system;
-          modules = [
-            /etc/nixos/configuration.nix
-            ./common.nix
-            ./gui.nix
-            ./distrobox.nix
-            ./host.nix
-            ./nvidia.nix
-            ./gaming.nix
-          ];
-        };
-
-        nixos-vm-aarch = nixpkgs.lib.nixosSystem rec {
-          system = "aarch64-linux";
-          specialArgs = buildSpecialArgs system;
-          modules = [
-            /etc/nixos/configuration.nix
-            ./common.nix
-            ./distrobox.nix
-            ./gui.nix
-            ./guest.nix
-          ];
-        };
-
-        nixos-vm-amd64 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            /etc/nixos/configuration.nix
-            ./common.nix
-            ./gui.nix
-          ];
-        };
+  outputs = {
+    nixpkgs,
+    nixpkgs-unstable,
+    ...
+  }: let
+    buildSpecialArgs = system: {
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
       };
     };
+  in {
+    nixosConfigurations = {
+      neeko = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        specialArgs = buildSpecialArgs system;
+        modules = [./neeko.nix];
+      };
+
+      nixos-5600 = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        specialArgs = buildSpecialArgs system;
+        modules = [
+          /etc/nixos/configuration.nix
+          ./common.nix
+          ./gui.nix
+          ./distrobox.nix
+          ./host.nix
+          ./nvidia.nix
+          ./gaming.nix
+        ];
+      };
+
+      nixos-vm-aarch = nixpkgs.lib.nixosSystem rec {
+        system = "aarch64-linux";
+        specialArgs = buildSpecialArgs system;
+        modules = [
+          /etc/nixos/configuration.nix
+          ./common.nix
+          ./distrobox.nix
+          ./gui.nix
+          ./guest.nix
+        ];
+      };
+
+      nixos-vm-amd64 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          /etc/nixos/configuration.nix
+          ./common.nix
+          ./gui.nix
+        ];
+      };
+    };
+  };
 }

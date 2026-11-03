@@ -10,7 +10,7 @@ tasks:
       - ./flake.lock
     cmds:
       - sudo nixfmt /etc/nixos
-      - nixfmt .
+      - dprint fmt '**/*.nix'
       - nh os switch . -- --impure
 
   gc:

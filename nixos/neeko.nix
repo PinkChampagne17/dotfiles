@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     /etc/nixos/configuration.nix
     ./common.nix

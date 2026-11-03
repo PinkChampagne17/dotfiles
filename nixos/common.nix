@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   boot.tmp.cleanOnBoot = true;
 
   environment.systemPackages = with pkgs; [
@@ -10,6 +8,7 @@
     delta
     devbox
     dig
+    dprint
     fastfetch
     fd
     fzf
@@ -29,7 +28,7 @@
   ];
 
   networking.hosts = {
-    "127.0.0.1" = [ "tpstelemetry.tencent.com" ];
+    "127.0.0.1" = ["tpstelemetry.tencent.com"];
   };
 
   # Allow unfree packages
@@ -74,7 +73,7 @@
 
   users.users.pinkchampagne = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
     # packages = with pkgs; [ ];
   };
 }

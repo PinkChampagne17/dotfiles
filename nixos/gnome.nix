@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -11,8 +9,7 @@
   };
 
   environment.gnome.excludePackages = (
-    with pkgs;
-    [
+    with pkgs; [
       gnome-console
       gnome-tour
       epiphany # web browser
@@ -32,5 +29,5 @@
     gnomeExtensions.dash-to-panel
   ];
 
-  services.udev.packages = [ pkgs.gnome-settings-daemon ];
+  services.udev.packages = [pkgs.gnome-settings-daemon];
 }
