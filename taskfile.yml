@@ -11,6 +11,9 @@ includes:
   os:
     taskfile: ./os.taskfile.yml
 
+vars:
+  HOME_DIR: '{{if eq OS "windows"}}{{.USERPROFILE}}{{else}}{{.HOME}}{{end}}'
+
 env:
   CHEZMOI_CONFIG_PATH: .config/chezmoi/chezmoi.toml
 
@@ -96,7 +99,7 @@ tasks:
 
       # TODO: For Windows
       - platforms: [darwin, linux]
-        cmd: nano $HOME/$CHEZMOI_CONFIG_PATH
+        cmd: nano {{.HOME_DIR}}/$CHEZMOI_CONFIG_PATH
 
       - task: configs:bbi
       - task: default
@@ -104,7 +107,7 @@ tasks:
   open-config-file:
     aliases: [ocf]
     cmds:
-      - $EDITOR $HOME/$CHEZMOI_CONFIG_PATH
+      - $EDITOR {{.HOME_DIR}}/$CHEZMOI_CONFIG_PATH
 
   update:
     cmds:

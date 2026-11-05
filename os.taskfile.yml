@@ -10,25 +10,17 @@ tasks:
       - brew upgrade
       - proto upgrade --yes
       - cmd: proto outdated --update --yes
-        dir: "{{.HOME}}"
+        dir: "{{.HOME_DIR}}"
       - cmd: proto install --yes
-        dir: "{{.HOME}}"
+        dir: "{{.HOME_DIR}}"
 
   clean:
     cmds:
       - pnpm store prune
       - proto clean cache --yes
-      - task: clean-darwin
-      - task: clean-windows
-
-  clean-darwin:
-    platforms: [darwin]
-    cmds:
-      - brew cleanup
-      - rm -rf "$HOME/.codex/worktrees"
-
-  clean-windows:
-    platforms: [windows]
-    cmds:
-      - scoop cleanup --all --cache
-      - rm -rf "$USERPROFILE/.codex/worktrees"
+      - platforms: [darwin]
+        cmd: brew cleanup
+      - platforms: [windows]
+        cmd: scoop cleanup --all --cache
+      - rm -rf "{{.HOME_DIR}}/.codex/worktrees"
+      - rm -rf "{{.HOME_DIR}}/.t3/worktrees"
