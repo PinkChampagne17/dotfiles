@@ -23,7 +23,9 @@ Follow these conventions when you operate in Plan Mode or present an implementat
   - Write explicit type signatures for all variables, properties, parameters, and return values.
   - For modified (`[~]`) symbols, write the new signature and add a short `//` comment that explains the change.
 - **Format**:
-  ```text
+  - Tag each fenced code block with the file's language identifier (for example, `ts`, `py`, `go`) for syntax highlighting.
+  - Use separate code blocks per language when a plan spans multiple languages.
+  ```ts
   src/user/service.ts
   ├── [+] interface UserFilter { role?: Role; active: boolean }
   ├── [~] class UserService
