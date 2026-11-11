@@ -14,7 +14,7 @@
     { "action": "provider.use", "resource": "*", "effect": "deny" },
     { "action": "provider.use", "resource": "ai-gateway", "effect": "allow" },
   ],
-  "model": "ai-gateway/gemini-4-argon",
+  "model": "ai-gateway/gemini-4-carbon",
   "providers": {
     "ai-gateway": {
       "name": "AI Gateway",
@@ -69,9 +69,9 @@
           },
           "compatibility": { "cacheFormat": "anthropic" },
         },
-        "claude-fable-5.1": {
-          "modelID": "anthropic/claude-fable-5.1",
-          "name": "Claude Fable 5.1",
+        "claude-fable-5.2": {
+          "modelID": "anthropic/claude-fable-5.2",
+          "name": "Claude Fable 5.2",
           "cost": {
             "input": 10,
             "output": 50,
@@ -111,9 +111,9 @@
             "output": ["text"],
           },
         },
-        "gemini-4-argon": {
-          "modelID": "google/gemini-4-argon",
-          "name": "Gemini 4 Argon",
+        "gemini-4-carbon": {
+          "modelID": "google/gemini-4-carbon",
+          "name": "Gemini 4 Carbon",
           "cost": {
             "input": 2,
             "output": 10,
