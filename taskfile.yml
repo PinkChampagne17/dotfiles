@@ -1,4 +1,4 @@
-$schema: https://taskfile.dev/schema.json
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
 version: "3"
 
 includes:
@@ -8,8 +8,10 @@ includes:
   nixos:
     taskfile: ./nixos/taskfile.yml
     dir: ./nixos
-  os:
-    taskfile: ./os.taskfile.yml
+  os: ./os.taskfile.yml
+
+vars:
+  HOME_DIR: '{{if eq OS "windows"}}{{.USERPROFILE}}{{else}}{{.HOME}}{{end}}'
 
 env:
   CHEZMOI_CONFIG_PATH: .config/chezmoi/chezmoi.toml
@@ -88,6 +90,10 @@ tasks:
     cmds:
       - dprint fmt
 
+  check:
+    cmds:
+      - pnpm dlx @lintel/lintel@0.0.19 validate --verbose '**/*.yaml' '**/*.yml' '**/*.json' '**/*.jsonc'
+
   init:
     prompt: This is a dangerous command... Do you want to continue?
 
@@ -96,7 +102,7 @@ tasks:
 
       # TODO: For Windows
       - platforms: [darwin, linux]
-        cmd: nano $HOME/$CHEZMOI_CONFIG_PATH
+        cmd: nano {{.HOME_DIR}}/$CHEZMOI_CONFIG_PATH
 
       - task: configs:bbi
       - task: default
@@ -104,7 +110,7 @@ tasks:
   open-config-file:
     aliases: [ocf]
     cmds:
-      - $EDITOR $HOME/$CHEZMOI_CONFIG_PATH
+      - $EDITOR {{.HOME_DIR}}/$CHEZMOI_CONFIG_PATH
 
   update:
     cmds:

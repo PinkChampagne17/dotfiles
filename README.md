@@ -51,15 +51,16 @@ task init
 
 ## Daily Workflows
 
-| Command               | Description                                                      |
-| --------------------- | ---------------------------------------------------------------- |
-| `task` / `task apply` | Apply chezmoi changes, sync npm config, and install skills       |
-| `task init`           | Run initial setup (edit config, install dependencies, and apply) |
-| `task os:ut`          | Upgrade system packages (Brew) and proto toolchains              |
-| `task os:clean`       | Clean package caches (Brew / Scoop, proto, pnpm)                 |
-| `task nixos:routine`  | _(NixOS only)_ Update Nix channels, collect garbage, and rebuild |
-| `task fmt`            | Format config files with `dprint`                                |
-| `task ocf`            | Open the chezmoi configuration file in `$EDITOR`                 |
+| Command               | Description                                                          |
+| --------------------- | -------------------------------------------------------------------- |
+| `task` / `task apply` | Apply chezmoi changes, sync npm config, and install skills           |
+| `task init`           | Run initial setup (edit config, install dependencies, and apply)     |
+| `task os:ut`          | Upgrade system packages (Brew) and proto toolchains                  |
+| `task os:clean`       | Clean package caches (Brew / Scoop, proto, pnpm) and agent worktrees |
+| `task nixos:routine`  | _(NixOS only)_ Update Nix channels, collect garbage, and rebuild     |
+| `task fmt`            | Format config files with `dprint`                                    |
+| `task check`          | Validate YAML, JSON, and JSONC files with Lintel                     |
+| `task ocf`            | Open the chezmoi configuration file in `$EDITOR`                     |
 
 ---
 

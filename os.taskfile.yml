@@ -1,34 +1,29 @@
-$schema: https://taskfile.dev/schema.json
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
 version: "3"
 
 tasks:
   upgrade-tools:
     aliases: [ut]
     platforms: [darwin]
+    dir: "{{.HOME_DIR}}"
+    requires:
+      vars: [HOME_DIR]
     cmds:
       - brew update
       - brew upgrade
       - proto upgrade --yes
-      - cmd: proto outdated --update --yes
-        dir: "{{.HOME}}"
-      - cmd: proto install --yes
-        dir: "{{.HOME}}"
+      - proto outdated --update --yes
+      - proto install --yes
 
   clean:
+    requires:
+      vars: [HOME_DIR]
     cmds:
       - pnpm store prune
       - proto clean cache --yes
-      - task: clean-darwin
-      - task: clean-windows
-
-  clean-darwin:
-    platforms: [darwin]
-    cmds:
-      - brew cleanup
-      - rm -rf "$HOME/.codex/worktrees"
-
-  clean-windows:
-    platforms: [windows]
-    cmds:
-      - scoop cleanup --all --cache
-      - rm -rf "$USERPROFILE/.codex/worktrees"
+      - platforms: [darwin]
+        cmd: brew cleanup
+      - platforms: [windows]
+        cmd: scoop cleanup --all --cache
+      - rm -rf "{{.HOME_DIR}}/.codex/worktrees"
+      - rm -rf "{{.HOME_DIR}}/.t3/worktrees"
