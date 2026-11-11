@@ -31,7 +31,7 @@ Remove a test case when it:
 - **Tests mocks or tautologies**: Asserts only what a mock returns without running real implementation logic.
 - **Tests language, framework, or library behavior**: Checks static types, simple getters or setters, or third-party code instead of project logic.
 - **Duplicates a broader test**: Covers a strict subset of another test in the same equivalence class (both code path and assertions).
-- **Couples to private details**: Asserts internal call order or private state when other tests already check observable results.
+- **Tests implementation instead of behavior**: Read [`../principle-test-behavior-not-implementation/SKILL.md`](../principle-test-behavior-not-implementation/SKILL.md) and remove or rewrite cases that fail its two-edit test.
 
 ### Merge (Overlapping Cases)
 

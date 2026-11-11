@@ -19,7 +19,7 @@ Follow these conventions when you write, edit, refactor, or review code and test
 
 ## Testing
 
-- Test behavior through the public API and assert observable outputs or side effects. Do not test private helpers, internal state, or implementation details directly.
+- When writing, editing, refactoring, or reviewing tests, read and follow [`../principle-test-behavior-not-implementation/SKILL.md`](../principle-test-behavior-not-implementation/SKILL.md).
 - Avoid test lifecycle hooks such as `beforeEach`, `afterEach`, `beforeAll`, and `afterAll`.
 - Wrap reusable arrange code in helper functions. Call these helpers directly in the test cases that need them.
 - Clean up resources and side effects inside the test scope. For example, in [Vitest](https://vitest.dev/), call `onTestFinished` right after you create a resource or cause a side effect.

@@ -57,7 +57,7 @@ tasks:
       - pnpm dlx skills add p-toy-factory/anti-pua --yes --global --agent universal claude-code -s '*'
       # cursor/plugins skills. One call per source, so the mapping lives here.
       # Convention: a skill I did not ask for stays in this block with the skill that needs it.
-      # Explicit: interrogate, reflect, sharpen, statechart.
+      # Explicit: interrogate, principle-test-behavior-not-implementation, reflect, sharpen, statechart.
       # Indirect, in the same order as the -s lines below:
       #   arena, in-your-own-words -> interrogate
       #   principle-laziness-protocol, principle-prove-it-works,
@@ -71,6 +71,7 @@ tasks:
       - >-
         pnpm dlx skills add https://github.com/cursor/plugins/tree/main --yes --global --agent universal claude-code
         -s interrogate
+        -s principle-test-behavior-not-implementation
         -s reflect
         -s sharpen
         -s statechart
