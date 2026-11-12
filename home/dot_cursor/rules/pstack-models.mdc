@@ -10,15 +10,15 @@ bug-fix: inherit-parent
 perf-issue: inherit-parent
 hillclimb: inherit-parent
 judgment and prose: ai-gateway/claude-opus-5.5
-hardest tasks: ai-gateway/claude-opus-5.5#xhigh
+hardest tasks: ai-gateway/claude-opus-5.5#high
 how explorer: ai-gateway/deepseek-v4.1-flash-1017
-how explainer: ai-gateway/gemini-4-argon
-why investigators: ai-gateway/gemini-4-argon
-why synthesizer: ai-gateway/gemini-4-argon
+how explainer: ai-gateway/gemini-4-carbon
+why investigators: ai-gateway/gemini-4-carbon
+why synthesizer: ai-gateway/gemini-4-carbon
 reflect tooling: inherit-parent
 reflect judgment, divergent, synthesizer: ai-gateway/claude-opus-5.5
-arena runners: ai-gateway/claude-opus-5.5#high, ai-gateway/gemini-4-argon
-arena cross-judge pool: ai-gateway/claude-opus-5.5#high, ai-gateway/gemini-4-argon
+arena runners: ai-gateway/claude-opus-5.5#high, ai-gateway/gemini-4-carbon
+arena cross-judge pool: ai-gateway/claude-opus-5.5#high, ai-gateway/gemini-4-carbon
 swarm workers: ai-gateway/deepseek-v4.1-flash-1017
-architect runners: ai-gateway/claude-opus-5.5#high, ai-gateway/gemini-4-argon
-interrogate reviewers: ai-gateway/claude-opus-5.5#xhigh, ai-gateway/gpt-6.1-sol#xhigh
+architect runners: ai-gateway/claude-opus-5.5#high, ai-gateway/gemini-4-carbon
+interrogate reviewers: ai-gateway/claude-opus-5.5#high, ai-gateway/gpt-6.1-sol#xhigh
