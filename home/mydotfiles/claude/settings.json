@@ -2,6 +2,11 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "apiKeyHelper": "security find-generic-password -s anthropic-auth-token -a default -w",
   "env": {
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "anthropic/claude-fable-5.2",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "anthropic/claude-haiku-5.5",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "anthropic/claude-opus-5.5",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "anthropic/claude-sonnet-5.5",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "192000",
     "CLAUDE_CODE_DISABLE_AGENT_VIEW": "1",
     "CLAUDE_CODE_ENABLE_AUTO_MODE": "1",
     "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1",
